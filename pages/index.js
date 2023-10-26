@@ -1,5 +1,6 @@
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import Link from "next/link";
 function Header({ title }) {
   return <h1>{title ? title : "Default title"}</h1>;
 }
@@ -11,7 +12,9 @@ export default function HomePage() {
   }
   return (
     <div>
-      <Header title="Develop. Preview. Ship. 🚀" />
+      <Link href="/index1">
+        <Header title="Develop. Preview. Ship. 🚀" />
+      </Link>
       <ul>
         {names.map((name) => (
           <li key={name}>{name}</li>
