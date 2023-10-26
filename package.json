@@ -20,6 +20,8 @@
     "antd": "^4.23.1",
     "axios": "^0.27.2",
     "classnames": "^2.3.2",
+    "eslint": "^8",
+    "eslint-config-next": "13.5.6",
     "next": "^13.5.6",
     "normalize.css": "^8.0.1",
     "prettier": "^3.0.3",
@@ -29,9 +31,8 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "react-transition-group": "^4.4.5",
+    "styled-component": "^2.8.0",
     "underscore": "^1.13.4",
-    "web-vitals": "^2.1.4",
-    "eslint": "^8",
-    "eslint-config-next": "13.5.6"
+    "web-vitals": "^2.1.4"
   }
 }
