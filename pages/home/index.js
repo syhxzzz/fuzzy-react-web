@@ -1,6 +1,6 @@
 import React from "react";
-import AppHeader from "../../components/app-header";
-import AppFooter from "../../components/app-footer";
+import AppHeader from "../../src/components/app-header";
+import AppFooter from "../../src/components/app-footer";
 import HomeSectionV1 from "./component/home-section-v1";
 import { HomeWrapper } from "./style";
 import HomeBanner from "./component/home-banner";

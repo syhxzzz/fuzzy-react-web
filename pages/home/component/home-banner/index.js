@@ -5,7 +5,7 @@ const HomeBanner = memo((infoData) => {
     <div>
       <Suspense fallback={<div>Loading...</div>}>
         <BannerWrapper>
-          <div>111</div>
+          <div className="cover"></div>
         </BannerWrapper>
       </Suspense>
     </div>
