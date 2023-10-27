@@ -1,8 +1,10 @@
 import styled from "styled-components";
-
+import Image from "next/image";
 export const BannerWrapper = styled.div`
   height: 529px;
-  background: url(${require("@assets/img/cover_01.jpeg")}) center / cover;
+  background-color: black;
+  background: url("/assets/img/cover_01.jpeg") center / cover;
+  color: tomato;
   .cover {
     position: absolute;
     left: 0;
