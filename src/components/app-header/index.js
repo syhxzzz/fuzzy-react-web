@@ -3,6 +3,7 @@ import useScrollPostion from "@/hooks/useScrollPosition";
 import { ThemeProvider } from "styled-components";
 import { HeaderWrapper, SearchAreaPlaceholder } from "./style";
 import HeaderLeft from "./little-component/header-left";
+import HeaderRight from "./little-component/header-right";
 const AppHeader = memo((props) => {
   const [isSearch, setIsSearch] = useState(false);
   const [isAlpha, setIsAlpha] = useState(false);
@@ -36,6 +37,7 @@ const AppHeader = memo((props) => {
         <div className="content">
           <div className="top">
             <HeaderLeft />
+            <HeaderRight />
           </div>
         </div>
       </HeaderWrapper>

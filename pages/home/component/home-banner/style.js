@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Image from "next/image";
 export const BannerWrapper = styled.div`
   height: 529px;
   background-color: black;
