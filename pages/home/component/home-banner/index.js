@@ -1,7 +1,7 @@
 import React, { memo, Suspense } from "react";
 import { BannerWrapper } from "./style";
 
-const HomeBanner = memo((infoData) => {
+const HomeBanner = memo(() => {
   return (
     <div>
       <Suspense fallback={<div>Loading...</div>}>
