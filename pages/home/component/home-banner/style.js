@@ -1,9 +1,10 @@
 import styled from "styled-components";
+
 export const BannerWrapper = styled.div`
   height: 529px;
-  background-color: black;
-  background: url("/assets/img/cover_01.jpeg") center / cover;
+  background: black url("/assets/img/cover_01.jpeg");
   color: tomato;
+
   .cover {
     position: absolute;
     left: 0;

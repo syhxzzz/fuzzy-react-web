@@ -1,5 +1,6 @@
-import React, { Suspense, memo } from "react";
+import React, { memo, Suspense } from "react";
 import { BannerWrapper } from "./style";
+
 const HomeBanner = memo((infoData) => {
   return (
     <div>
