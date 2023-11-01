@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d39b0cdb-437a-4722-9a1d-ce716ae79875" name="Changes" comment="modify home-banner.file">
+      <change afterPath="$PROJECT_DIR$/src/components/app-header/little-component/header-center/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/app-header/little-component/header-center/style.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/filter_data.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/footer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/search_titles.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/app-header/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app-header/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/svg/icon-logo/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/svg/icon-logo/index.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;syhxzzz&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="dbc8bff7-3622-4b2f-908f-a96dc6d0f15b" />
+        <option name="url" value="git@github.com:syhxzzz/fuzzy-react-web.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/node_modules/@types/react/index.d.ts" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2XTu5BKEC2bnVsDv4pleMmUryVW" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "code.cleanup.on.save": "true",
+    "git-widget-placeholder": "AppHeader",
+    "last_opened_file_path": "/Users/syhx/Documents/html&css&js/fuzzy-react-web/src",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "prettierjs.PrettierConfiguration.Package": "/Users/syhx/Documents/html&css&js/fuzzy-react-web/node_modules/prettier",
+    "rearrange.code.on.save": "true",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "HTML"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="dev" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d39b0cdb-437a-4722-9a1d-ce716ae79875" name="Changes" comment="" />
+      <created>1698665206281</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1698665206281</updated>
+      <workItem from="1698665207957" duration="707000" />
+      <workItem from="1698665926677" duration="176000" />
+      <workItem from="1698666112076" duration="7529000" />
+    </task>
+    <task id="LOCAL-00001" summary="from VS code to WebStorm">
+      <option name="closed" value="true" />
+      <created>1698666185738</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1698666185738</updated>
+    </task>
+    <task id="LOCAL-00002" summary="from VS code to WebStorm">
+      <option name="closed" value="true" />
+      <created>1698669001566</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1698669001566</updated>
+    </task>
+    <task id="LOCAL-00003" summary="modify home-banner.file">
+      <option name="closed" value="true" />
+      <created>1698669045505</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1698669045505</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="from VS code to WebStorm" />
+    <MESSAGE value="modify home-banner.file" />
+    <option name="LAST_COMMIT_MESSAGE" value="modify home-banner.file" />
+  </component>
+</project>
