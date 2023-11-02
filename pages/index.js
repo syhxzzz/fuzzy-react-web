@@ -12,7 +12,7 @@ export default function HomePage() {
   }
   return (
     <div>
-      <Link href="/home">
+      <Link href="/discover">
         <Header title="Develop. Preview. Ship. 🚀" />
       </Link>
       <ul>
