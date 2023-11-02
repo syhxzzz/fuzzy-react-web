@@ -1,42 +1,106 @@
 import styled from "styled-components";
-export const HeaderWrapper = styled.div`
-  &.fixed {
-    position: fixed;
-    z-index: 99;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
+
+export const AppHeaderWrapper = styled.div`
+  height: 75px;
+  background-color: #242424;
+  font-size: 14px;
 
   .content {
-    position: relative;
-    z-index: 9;
-    transition: all 250ms ease;
-    border-bottom: 1px solid #eee;
-    border-bottom-color: ${(props) =>
-      props.theme.isAlpha ? "rgba(238,238,238,0)" : "rgba(238,238,238,1)"};
-    background-color: ${(props) =>
-      props.theme.isAlpha ? "rgba(255,255,255,0)" : "rgba(255,255,255,1)"};
-  }
-
-  .top {
     display: flex;
-    align-items: center;
-    height: 80px;
-    padding: 0 24px;
+    justify-content: space-between;
   }
 
-  .cover {
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.3);
+  .divider {
+    height: 5px;
+    background-color: #c20c0c;
   }
 `;
 
-export const SearchAreaPlaceholder = styled.div`
-  height: ${(props) => (props.isSearch ? "100px" : "0")};
-  transition: height 250ms ease;
+export const HeaderLeft = styled.div`
+  display: flex;
+
+  .logo {
+    display: block;
+    width: 176px;
+    height: 70px;
+    background-position: 0 0;
+    text-indent: -9999px;
+  }
+
+  .select-list {
+    display: flex;
+    line-height: 70px;
+
+    .select-item {
+      position: relative;
+
+      a {
+        display: block;
+        padding: 0 20px;
+        color: #ccc;
+      }
+
+      :last-of-type a {
+        position: relative;
+        ::after {
+          position: absolute;
+          content: "";
+          width: 28px;
+          height: 19px;
+          background-image: url("@/assets/img/sprite_01.png");
+          /* background-image: url(${require("@/assets/img/sprite_01.png")}); */
+          background-position: -190px 0;
+          top: 20px;
+          right: -15px;
+        }
+      }
+
+      &:hover a,
+      .active {
+        color: #fff;
+        background: #000;
+        text-decoration: none;
+      }
+
+      .active .icon {
+        position: absolute;
+        display: inline-block;
+        width: 12px;
+        height: 7px;
+        bottom: -1px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        background-position: -226px 0;
+      }
+    }
+  }
+`;
+
+export const HeaderRight = styled.div`
+  display: flex;
+  align-items: center;
+  color: #ccc;
+  font-size: 12px;
+
+  .search {
+    width: 158px;
+    height: 32px;
+    border-radius: 16px;
+
+    input {
+      &::placeholder {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .center {
+    width: 90px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    border: 1px solid #666;
+    border-radius: 16px;
+    margin: 0 16px;
+  }
 `;

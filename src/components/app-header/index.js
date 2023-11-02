@@ -1,49 +1,60 @@
-import React, { memo, useRef, useState } from "react";
-import useScrollPostion from "@/hooks/useScrollPosition";
-import { ThemeProvider } from "styled-components";
-import { HeaderWrapper } from "./style";
-import HeaderLeft from "./little-component/header-left";
-import HeaderRight from "./little-component/header-right";
+import React, { memo } from "react";
+import Link from "next/link";
+import classnames from "classnames";
 
-const AppHeader = memo((props) => {
-  const [isSearch, setIsSearch] = useState(false);
-  const [isAlpha, setIsAlpha] = useState(false);
+import { headerLinks } from "@/data/local-data";
 
-  const { scrollY } = useScrollPostion();
+import { Input } from "antd";
+import { SearchOutlined } from "@ant-design/icons";
 
-  if (scrollY === 0 && !isSearch) {
-    setIsSearch(true);
-    setIsAlpha(true);
-  }
+import { AppHeaderWrapper, HeaderLeft, HeaderRight } from "./style";
 
-  if (isAlpha && isSearch && scrollY > 0) {
-    setIsAlpha(false);
-    setIsSearch(false);
-  }
+export default memo(function HYAppHeader() {
+  const showItem = (item, index) => {
+    if (index < 3) {
+      return (
+        <Link href={item.link}>
+          {item.title}
+          <i className="sprite_01 icon"></i>
+        </Link>
+      );
+    } else {
+      return (
+        <a href={item.link} target="_blank" rel="noopener noreferrer">
+          {item.title}
+        </a>
+      );
+    }
+  };
 
-  function handleBarClick() {
-    setIsSearch(true);
-  }
-
-  const prevY = useRef(0);
-  if (!isSearch) {
-    prevY.current = scrollY;
-  }
-  if (Math.abs(prevY.current - scrollY) > 30 && isSearch) {
-    setIsSearch(false);
-  }
   return (
-    <ThemeProvider theme={{ isAlpha }}>
-      <HeaderWrapper>
-        <div className="content">
-          <div className="top">
-            <HeaderLeft />
-            <HeaderRight />
+    <AppHeaderWrapper>
+      <div className="wrap-v1 content">
+        <HeaderLeft>
+          <a className="logo sprite_01" href="#/">
+            网易云音乐
+          </a>
+          <div className="select-list">
+            {headerLinks.map((item, index) => {
+              return (
+                <div className={classnames("select-item")} key={item.title}>
+                  {showItem(item, index)}
+                </div>
+              );
+            })}
           </div>
-        </div>
-      </HeaderWrapper>
-    </ThemeProvider>
+        </HeaderLeft>
+        <HeaderRight>
+          <Input
+            className="search"
+            placeholder="音乐/视频/电台/用户"
+            prefix={<SearchOutlined />}
+          />
+          <div className="center">创作者中心</div>
+          <div className="">登录</div>
+        </HeaderRight>
+      </div>
+      <div className="divider"></div>
+    </AppHeaderWrapper>
   );
 });
-AppHeader.displayName = "AppHeader";
-export default AppHeader;
