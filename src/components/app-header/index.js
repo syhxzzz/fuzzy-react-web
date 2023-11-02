@@ -31,9 +31,7 @@ export default memo(function HYAppHeader() {
     <AppHeaderWrapper>
       <div className="wrap-v1 content">
         <HeaderLeft>
-          <a className="logo sprite_01" href="#/">
-            网易云音乐
-          </a>
+          <Link className="logo sprite_01" href="#/" />
           <div className="select-list">
             {headerLinks.map((item, index) => {
               return (
@@ -50,8 +48,10 @@ export default memo(function HYAppHeader() {
             placeholder="音乐/视频/电台/用户"
             prefix={<SearchOutlined />}
           />
-          <div className="center">创作者中心</div>
-          <div className="">登录</div>
+          <div className="center">
+            <a style={{ color: "white", textDecoration: "none" }}>创作者中心</a>
+          </div>
+          <div className="login">登录</div>
         </HeaderRight>
       </div>
       <div className="divider"></div>

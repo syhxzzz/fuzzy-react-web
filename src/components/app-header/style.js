@@ -4,7 +4,7 @@ export const AppHeaderWrapper = styled.div`
   height: 75px;
   background-color: #242424;
   font-size: 14px;
-
+  text-decoration-style: none;
   .content {
     display: flex;
     justify-content: space-between;
@@ -20,11 +20,11 @@ export const HeaderLeft = styled.div`
   display: flex;
 
   .logo {
+    color: black;
     display: block;
     width: 176px;
     height: 70px;
     background-position: 0 0;
-    text-indent: -9999px;
   }
 
   .select-list {
@@ -47,7 +47,7 @@ export const HeaderLeft = styled.div`
           content: "";
           width: 28px;
           height: 19px;
-          background-image: url("@/assets/img/sprite_01.png");
+          background: black url("/assets/img/sprite_01.png");
           /* background-image: url(${require("@/assets/img/sprite_01.png")}); */
           background-position: -190px 0;
           top: 20px;
