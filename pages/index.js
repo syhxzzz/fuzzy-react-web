@@ -1,27 +1,23 @@
-import { usePathname } from "next/navigation";
-import { useState } from "react";
-import Link from "next/link";
-function Header({ title }) {
-  return <h1>{title ? title : "Default title"}</h1>;
+export async function getServerSideProps(context) {
+  return {
+    redirect: {
+      destination: "discover",
+      permanent: false,
+    },
+  };
 }
+// 服务器端进行重定向
 export default function HomePage() {
-  const names = ["Ada Lovelace", "Grace Hopper", "Margaret Hamilton"];
-  const [likes, setLikes] = useState(0);
-  function handleClick() {
-    setLikes(likes + 1);
-  }
-  return (
-    <div>
-      <Link href="/discover">
-        <Header title="Develop. Preview. Ship. 🚀" />
-      </Link>
-      <ul>
-        {names.map((name) => (
-          <li key={name}>{name}</li>
-        ))}
-      </ul>
-      <p>current Path name: {usePathname()}</p>
-      <button onClick={handleClick}>Like ({likes})</button>
-    </div>
-  );
+  return null;
 }
+
+// const HomePage = () => {
+//   const router = useRouter();
+
+//   useEffect(() => {
+//     router.replace('/discover');
+//   }, [router]);
+
+//   return null; // 或者展示一个加载中的提示
+// };
+// 客户端渲染，会有额外的渲染和延迟
