@@ -31,6 +31,19 @@ export const HeaderLeft = styled.div`
     display: flex;
     line-height: 70px;
 
+    .select-item:last-of-type {
+      position: relative;
+      ::after {
+        position: absolute;
+        content: "";
+        width: 28px;
+        height: 19px;
+        background-image: url("/assets/img/sprite_01.png");
+        background-position: -190px 0;
+        top: 20px;
+        right: -15px;
+      }
+    }
     .select-item {
       position: relative;
 
@@ -38,21 +51,6 @@ export const HeaderLeft = styled.div`
         display: block;
         padding: 0 20px;
         color: #ccc;
-      }
-
-      :last-of-type a {
-        position: relative;
-        ::after {
-          position: absolute;
-          content: "";
-          width: 28px;
-          height: 19px;
-          background: black url("/assets/img/sprite_01.png");
-          /* background-image: url(${require("@/assets/img/sprite_01.png")}); */
-          background-position: -190px 0;
-          top: 20px;
-          right: -15px;
-        }
       }
 
       &:hover a,

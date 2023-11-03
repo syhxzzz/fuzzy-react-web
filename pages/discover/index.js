@@ -8,10 +8,10 @@ export default memo(function Discover() {
     <AppLayout>
       <DiscoverWrapper>
         <div className="top">
-          <TopMenu className="discover-header">
+          <TopMenu className="wrap-v1">
             {discoverMenu.map((item) => {
               return (
-                <div className="title" key={item.title}>
+                <div className="item" key={item.title}>
                   <Link href={item.link}>{item.title}</Link>
                 </div>
               );
