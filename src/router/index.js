@@ -1,9 +1,7 @@
 import React from "react";
 import { Redirect } from "next";
 
-const HYDiscover = React.lazy(() =>
-  import("@/../pages/discover/c-pages/recommend")
-);
+const HYDiscover = React.lazy(() => import("../../pages/discover/recommend"));
 const HYRanking = React.lazy(() =>
   import("@/../pages/discover/c-pages/ranking")
 );
@@ -33,4 +31,3 @@ export default AA[
     ],
   })
 ];
-

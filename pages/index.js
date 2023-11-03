@@ -1,7 +1,7 @@
 export async function getServerSideProps(context) {
   return {
     redirect: {
-      destination: "discover",
+      destination: "/discover",
       permanent: false,
     },
   };
