@@ -48,25 +48,9 @@ export const FooterRight = styled.ul`
       display: block;
       width: 50px;
       height: 45px;
-
-      /* background: url(${require("@/assets/img/sprite_footer_02.png")}); */
       background: url("assets/img/sprite_footer_02.png");
       background-size: 110px 450px;
     }
-
-    :nth-child(1) .link {
-      background-position: -60px -101px;
-    }
-    :nth-child(2) .link {
-      background-position: 0 0;
-    }
-    :nth-child(2) .link {
-      background-position: -60px -50px;
-    }
-    :nth-child(2) .link {
-      background-position: 0 -101px;
-    }
-
     .title {
       margin-top: 5px;
       display: block;
@@ -77,21 +61,56 @@ export const FooterRight = styled.ul`
       /* background-color: red; */
     }
 
-    :nth-child(1) .title {
+    /* .title:nth-child(1) {
       background-position: -10px -90px;
       background-color: red;
     }
-    :nth-child(2) .title {
+    .title:nth-child(2) {
       background-position: 0 0;
       margin-top: 7px;
     }
-    :nth-child(3) .title {
+    .title:nth-child(3) {
       background-position: 0 -54px;
       margin-top: 6px;
     }
 
     :nth-child(4) .title {
       background-position: -1px -72px;
+      margin-top: 6px;
+    } */
+  }
+  li:nth-child(1) {
+    .link {
+      background-position: -60px -101px;
+    }
+    .title {
+      background-position: 2px -90px;
+    }
+  }
+  li:nth-child(2) {
+    .link {
+      background-position: 0 0;
+    }
+    .title {
+      background-position: 0 0;
+      margin-top: 7px;
+    }
+  }
+  li:nth-child(3) {
+    .link {
+      background-position: -60px -50px;
+    }
+    .title {
+      background-position: 2px -54px;
+      margin-top: 6px;
+    }
+  }
+  li:nth-child(4) {
+    .link {
+      background-position: 0 -101px;
+    }
+    .title {
+      background-position: 0px -72px;
       margin-top: 6px;
     }
   }
