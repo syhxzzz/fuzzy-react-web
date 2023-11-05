@@ -48,7 +48,7 @@ export const FooterRight = styled.ul`
       display: block;
       width: 50px;
       height: 45px;
-      background: url("assets/img/sprite_footer_02.png");
+      background: url("/assets/img/sprite_footer_02.png");
       background-size: 110px 450px;
     }
     .title {
@@ -56,28 +56,9 @@ export const FooterRight = styled.ul`
       display: block;
       width: 52px;
       height: 10px;
-      background-image: url("assets/img/sprite_footer_01.png");
+      background-image: url("/assets/img/sprite_footer_01.png");
       background-size: 180px 100px;
-      /* background-color: red; */
     }
-
-    /* .title:nth-child(1) {
-      background-position: -10px -90px;
-      background-color: red;
-    }
-    .title:nth-child(2) {
-      background-position: 0 0;
-      margin-top: 7px;
-    }
-    .title:nth-child(3) {
-      background-position: 0 -54px;
-      margin-top: 6px;
-    }
-
-    :nth-child(4) .title {
-      background-position: -1px -72px;
-      margin-top: 6px;
-    } */
   }
   li:nth-child(1) {
     .link {

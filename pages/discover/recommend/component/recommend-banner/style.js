@@ -30,7 +30,7 @@ export const BannerRight = styled.a.attrs({
 })`
   width: 254px;
   height: 270px;
-  background: url(${require("@/assets/img/download.png")});
+  background: url("/assets/img/download.png");
 `;
 
 export const BannerControl = styled.div`

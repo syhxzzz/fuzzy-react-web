@@ -9,7 +9,7 @@ export default memo(function HYAppFooter() {
           <div className="link">
             {footerLinks.map((item, index) => {
               return (
-                <Fragment className="item" key={item.title}>
+                <Fragment key={item.title}>
                   <a className="link" href={item.link} target="_blank">
                     {item.title}
                   </a>
