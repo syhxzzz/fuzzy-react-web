@@ -47,11 +47,13 @@ export default memo(function RecommendBanner() {
             {state.banners.map((item, index) => {
               return (
                 <div className="banner-item" key={item.imageUrl}>
-                  <Image
-                    className="image"
-                    src={item.imageUrl}
-                    alt={item.typeTitle}
-                  />
+                  <picture>
+                    <img
+                      className="image"
+                      src={item.imageUrl}
+                      alt={item.typeTitle}
+                    />
+                  </picture>
                 </div>
               );
             })}
