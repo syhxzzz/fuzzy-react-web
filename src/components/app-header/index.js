@@ -2,7 +2,7 @@ import React, { memo } from "react";
 import Link from "next/link";
 import classnames from "classnames";
 
-import { headerLinks } from "@/data/local-data";
+import { headerLinks } from "@/services/local-data";
 
 import { Input } from "antd";
 import { SearchOutlined } from "@ant-design/icons";

@@ -6,7 +6,7 @@ import {
   getArtistList,
   getHotRecommend,
   getNewAlbum,
-} from "@/data/recommend";
+} from "@/services/recommend";
 
 const changeBannerAction = (res) => ({
   type: actionTypes.CHANGE_TOP_BNNAER,

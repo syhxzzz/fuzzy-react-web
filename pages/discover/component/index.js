@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import { DiscoverWrapper, TopMenu } from "./style";
-import { discoverMenu } from "@/data/local-data.js";
+import { discoverMenu } from "@/services/local-data.js";
 import Link from "next/link";
 import AppLayout from "@/components/app-layout";
 export default memo(function DiscoverHeaderWrapper({ children }) {
