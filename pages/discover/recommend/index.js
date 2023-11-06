@@ -4,14 +4,14 @@ import RecommendBanner from "./component/recommend-banner";
 import {
   RecommendLeft,
   RecommendRight,
-  RecommendWraper,
+  RecommendWrapper,
   Content,
 } from "./style";
 import HotRecommend from "./component/recommend-hot-recommend";
 export default memo(function RecommendPage() {
   return (
     <DiscoverHeaderWrapper>
-      <RecommendWraper>
+      <RecommendWrapper>
         <RecommendBanner />
         <Content className="wrap-v2">
           <RecommendLeft>
@@ -19,7 +19,7 @@ export default memo(function RecommendPage() {
           </RecommendLeft>
           <RecommendRight></RecommendRight>
         </Content>
-      </RecommendWraper>
+      </RecommendWrapper>
     </DiscoverHeaderWrapper>
   );
 });
