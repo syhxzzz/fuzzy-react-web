@@ -1,4 +1,4 @@
-import React, { Fragment, li, memo } from "react";
+import React, { Fragment, memo } from "react";
 import { AppFooterWrapper, FooterLeft, FooterRight } from "./style";
 import { footerLinks, footerImages } from "@/services/local-data";
 export default memo(function HYAppFooter() {
