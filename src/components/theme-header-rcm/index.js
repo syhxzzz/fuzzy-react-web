@@ -14,11 +14,11 @@ const ThemeHeaderRCM = memo(function A(props) {
         <div className="keyword">
           {keywords.map((item) => {
             return (
-              <div key={item}>
+              <div className="item" key={item}>
                 <span className="link" onClick={() => keywordClick(item)}>
                   {item}
                 </span>
-                <span>|</span>
+                <span className="divider">|</span>
               </div>
             );
           })}
@@ -31,3 +31,14 @@ const ThemeHeaderRCM = memo(function A(props) {
     </HeaderWrapper>
   );
 });
+
+ThemeHeaderRCM.defaultProps = {
+  keywords: [],
+};
+
+ThemeHeaderRCM.propTypes = {
+  title: PropTypes.string.isRequired,
+  keywords: PropTypes.array,
+};
+
+export default ThemeHeaderRCM;
