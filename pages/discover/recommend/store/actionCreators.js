@@ -61,7 +61,7 @@ export const getRecommend = () => {
 
 export const getAlbum = () => {
   return (dispatch) => {
-    getNewAlbum(10, 0).then((res) => {
+    getNewAlbum(15, 0).then((res) => {
       dispatch(changeNewAlbumAction(res));
     });
   };
