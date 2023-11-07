@@ -5,7 +5,7 @@ import Link from "next/link";
 
 import { HeaderWrapper } from "./style";
 
-const ThemeHeaderRCM = memo(function A(props) {
+const ThemeHeaderRCM = memo(function ThemeHeaderRCM(props) {
   const { title, keywords, moreLink, keywordClick } = props;
   return (
     <HeaderWrapper className="sprite_02">
