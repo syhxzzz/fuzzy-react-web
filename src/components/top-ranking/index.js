@@ -12,7 +12,7 @@ export default memo(function TopRanking(props) {
   const playMusic = (item) => {
     dispatch(getSongDetailAction(item.id));
   };
-  // TODO(): getSongDetailAction() haven't been finished
+  // TODO(): getSongDetailAction() haven't been finished yet
   return (
     <TopRankingWrapper>
       <div className="header">
@@ -44,7 +44,7 @@ export default memo(function TopRanking(props) {
                     className="btn sprite_02 play"
                     onClick={(e) => playMusic(item)}
                   />
-                  <button className="btn sprite_02 addTo" />
+                  <button className="btn sprite_icon2 addTo" />
                   <button className="btn sprite_02 favor" />
                 </div>
               </div>
