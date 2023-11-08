@@ -56,9 +56,9 @@ export default memo(function HYAppFooter() {
           </div>
         </FooterLeft>
         <FooterRight className="right">
-          {footerImages.map((item) => {
+          {footerImages.map((item, index) => {
             return (
-              <li className="item" key={item.title}>
+              <li className="item" key={index}>
                 <a
                   className="link"
                   href={item.link}

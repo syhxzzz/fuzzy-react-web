@@ -15,13 +15,16 @@ export default memo(function RecommendBanner() {
   const [state, setState] = useState({ banners: [] });
   const dispatch = useDispatch();
   const select = (state1) => state1.recommend.get("topBanners");
-  const state1 = store.getState();
   const stateSelector = createSelector([select], (a) => ({
     banners: a,
   }));
   useEffect(() => {
-    setState(stateSelector(state1));
-  }, [stateSelector, state1]);
+    function updateState() {
+      setState(stateSelector(store.getState()));
+    }
+    const fun = store.subscribe(updateState);
+    return fun;
+  }, [stateSelector]);
 
   const bannerRef = useRef();
 

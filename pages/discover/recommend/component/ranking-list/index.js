@@ -14,7 +14,6 @@ export default memo(function RankingList() {
     topNewList: {},
     topOriginList: {},
   });
-  const state1 = store.getState();
   const selectA = (state1) => state1.recommend.get("topUpList");
   const selectB = (state1) => state1.recommend.get("topNewList");
   const selectC = (state1) => state1.recommend.get("topOriginList");
@@ -27,8 +26,12 @@ export default memo(function RankingList() {
     })
   );
   useEffect(() => {
-    setState(stateSelector(state1));
-  }, [state1, stateSelector]);
+    function updatedState() {
+      setState(stateSelector(store.getState()));
+    }
+    const fun = store.subscribe(updatedState);
+    return fun;
+  }, [stateSelector]);
 
   useEffect(() => {
     dispatch(getTopData(19723756));

@@ -10,7 +10,6 @@ import store from "@/store";
 export default memo(function HotRecommend() {
   const router = useRouter();
   const dispatch = useDispatch();
-  const state1 = store.getState();
   const [state, setState] = useState({ recommends: [] });
   const selectB = (state) => state.recommend.get("hotRecommends");
   const stateSelector = createSelector([selectB], (a) => ({ recommends: a }));
@@ -18,9 +17,12 @@ export default memo(function HotRecommend() {
     dispatch(getRecommend());
   }, [dispatch]);
   useEffect(() => {
-    setState(stateSelector(state1));
-  }, [state1, stateSelector]);
-
+    function updatedState() {
+      setState(stateSelector(store.getState()));
+    }
+    const fun = store.subscribe(updatedState);
+    return fun;
+  }, [stateSelector]);
   // TODO(): still some bug on keywordClick,
   // plan to fix it after recommend/album page was finished
   const keywordClick = useCallback(

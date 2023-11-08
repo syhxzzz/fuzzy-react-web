@@ -9,7 +9,7 @@ import store from "@/store";
 import { createSelector } from "@reduxjs/toolkit";
 
 export default memo(function NewAlbum(props) {
-  const [state2, setState2] = useState({ newAlbum: [] });
+  const [state, setState] = useState({ newAlbum: [] });
   const dispatch = useDispatch();
   const carouselRef = useRef();
   useEffect(() => {
@@ -21,8 +21,12 @@ export default memo(function NewAlbum(props) {
     newAlbum: a,
   }));
   useEffect(() => {
-    setState2(stateSelector(state1));
-  }, [state1, stateSelector]);
+    function updatedState() {
+      setState(stateSelector(store.getState()));
+    }
+    const fun = store.subscribe(updatedState);
+    return fun;
+  }, [stateSelector]);
 
   return (
     <AlbumWrapper>
@@ -37,7 +41,7 @@ export default memo(function NewAlbum(props) {
             {[0, 1, 2].map((item) => {
               return (
                 <div key={item} className="page">
-                  {state2.newAlbum
+                  {state.newAlbum
                     .slice(item * 5, 5 * (item + 1))
                     .map((item) => {
                       return <AlbumCover key={item.id} info={item} />;
