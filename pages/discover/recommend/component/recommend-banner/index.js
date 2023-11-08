@@ -1,5 +1,5 @@
 import React, { memo, useCallback, useEffect, useRef, useState } from "react";
-import { shallowEqual, useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   BannerWrapper,
   BannerControl,
@@ -9,18 +9,19 @@ import {
 import { Carousel } from "antd";
 import { getBanner } from "../../store/actionCreators";
 import store from "@/store/index.js";
+import { createSelector } from "@reduxjs/toolkit";
 export default memo(function RecommendBanner() {
   const [currentIndex, setCurrentIndex] = useState(0);
-
+  const [state, setState] = useState({ banners: [] });
   const dispatch = useDispatch();
-
+  const select = (state1) => state1.recommend.get("topBanners");
   const state1 = store.getState();
-  const state = useSelector(
-    (state1) => ({
-      banners: state1.recommend.get("topBanners"),
-    }),
-    shallowEqual
-  );
+  const stateSelector = createSelector([select], (a) => ({
+    banners: a,
+  }));
+  useEffect(() => {
+    setState(stateSelector(state1));
+  }, [stateSelector, state1]);
 
   const bannerRef = useRef();
 

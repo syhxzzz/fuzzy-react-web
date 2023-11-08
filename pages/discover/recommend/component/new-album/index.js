@@ -2,7 +2,7 @@ import React, { useEffect, useRef, memo, useState } from "react";
 import { Carousel } from "antd";
 import ThemeHeaderRCM from "@/components/theme-header-rcm";
 import { getAlbum } from "../../store/actionCreators";
-import { shallowEqual, useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { AlbumWrapper } from "./style";
 import AlbumCover from "@/components/album-cover";
 import store from "@/store";
@@ -20,16 +20,10 @@ export default memo(function NewAlbum(props) {
   const stateSelector = createSelector([selectNewAlbum], (a) => ({
     newAlbum: a,
   }));
-  // const state = stateSelector(state1);
   useEffect(() => {
     setState2(stateSelector(state1));
   }, [state1, stateSelector]);
-  // const state = useSelector(
-  //   (state1) => ({
-  //     newAlbum: state1.recommend.get("newAlbum"),
-  //   }),
-  //   shallowEqual
-  // );
+
   return (
     <AlbumWrapper>
       <ThemeHeaderRCM title="新碟上架" moreLink="/discover/album" />
