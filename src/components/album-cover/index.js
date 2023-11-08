@@ -5,7 +5,7 @@ export default memo(function AlbumCover(props) {
   const { info, size = "100px", width = "118px", bgp = "-570px" } = props;
 
   return (
-    <AlbumWrapper size={size} width={width} bgp={bgp}>
+    <AlbumWrapper size={size} width={width} $bgp={bgp}>
       <div className="album-image">
         <picture>
           <img alt="" src={getSizeImage(info.picUrl, 150)} />

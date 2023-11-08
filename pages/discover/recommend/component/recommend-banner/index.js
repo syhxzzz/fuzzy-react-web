@@ -38,13 +38,13 @@ export default memo(function RecommendBanner() {
     }, 0);
   }, []);
 
-  const bgImage =
+  const bgimage =
     state.banners &&
     state.banners[currentIndex] &&
-    state.banners[currentIndex].imageUrl + "?imageView&blur=40x20";
+    `${state.banners[currentIndex].imageUrl}?imageView&blur=40x20`;
 
   return (
-    <BannerWrapper bgImage={bgImage}>
+    <BannerWrapper $bgimage={bgimage}>
       <div className="banner wrap-v2">
         <BannerLeft>
           <Carousel
