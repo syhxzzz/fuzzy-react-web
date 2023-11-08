@@ -8,10 +8,13 @@ import {
 } from "./style.js";
 import { Carousel } from "antd";
 import { getBanner } from "../../store/actionCreators";
+import store from "@/store/index.js";
 export default memo(function RecommendBanner() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const dispatch = useDispatch();
+
+  const state1 = store.getState();
   const state = useSelector(
     (state1) => ({
       banners: state1.recommend.get("topBanners"),
@@ -32,6 +35,7 @@ export default memo(function RecommendBanner() {
   }, []);
 
   const bgImage =
+    state.banners &&
     state.banners[currentIndex] &&
     state.banners[currentIndex].imageUrl + "?imageView&blur=40x20";
 
