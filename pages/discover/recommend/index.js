@@ -10,6 +10,7 @@ import {
 import HotRecommend from "./component/recommend-hot-recommend";
 import NewAlbum from "./component/new-album";
 import RankingList from "./component/ranking-list";
+import UserLogin from "./component/user-login";
 export default memo(function RecommendPage() {
   return (
     <DiscoverHeaderWrapper>
@@ -21,7 +22,9 @@ export default memo(function RecommendPage() {
             <NewAlbum />
             <RankingList />
           </RecommendLeft>
-          <RecommendRight></RecommendRight>
+          <RecommendRight>
+            <UserLogin />
+          </RecommendRight>
         </Content>
       </RecommendWrapper>
     </DiscoverHeaderWrapper>
