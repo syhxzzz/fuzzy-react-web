@@ -9,7 +9,7 @@ const defaultState = Map({
   topNewList: {},
   topOriginList: {},
 
-  settleSings: [],
+  settleSingers: [],
 });
 
 export default function reducer(state = defaultState, action) {

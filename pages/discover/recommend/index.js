@@ -12,6 +12,7 @@ import NewAlbum from "./component/new-album";
 import RankingList from "./component/ranking-list";
 import UserLogin from "./component/user-login";
 import SettleSinger from "./component/settle-singer";
+import HotRadio from "./component/hot-radio";
 export default memo(function RecommendPage() {
   return (
     <DiscoverHeaderWrapper>
@@ -26,6 +27,7 @@ export default memo(function RecommendPage() {
           <RecommendRight>
             <UserLogin />
             <SettleSinger />
+            <HotRadio />
           </RecommendRight>
         </Content>
       </RecommendWrapper>
