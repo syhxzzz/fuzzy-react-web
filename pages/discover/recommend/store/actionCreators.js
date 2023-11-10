@@ -88,7 +88,7 @@ export const getTopData = (idx) => {
 };
 
 export const getSettleSingers = () => {
-  (dispatch) => {
+  return (dispatch) => {
     getArtistList(5, 5001).then((res) => {
       dispatch(changeSettleSingsAction(res));
     });
