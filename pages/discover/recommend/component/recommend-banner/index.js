@@ -1,22 +1,30 @@
 import React, { memo, useCallback, useEffect, useRef, useState } from "react";
-import { shallowEqual, useDispatch, useSelector } from "react-redux";
-import { BannerWrapper, BannerControl, BannerLeft, BannerRight } from "./style";
+import { useDispatch } from "react-redux";
+import {
+  BannerWrapper,
+  BannerControl,
+  BannerLeft,
+  BannerRight,
+} from "./style.js";
 import { Carousel } from "antd";
-import Image from "next/image";
-import { getBanner } from "../../../pages/discover/recommend/store/actionCreators";
+import { getBanner } from "../../store/actionCreators";
+import store from "@/store/index.js";
+import { createSelector } from "@reduxjs/toolkit";
 export default memo(function RecommendBanner() {
   const [currentIndex, setCurrentIndex] = useState(0);
-
+  const [state, setState] = useState({ banners: [] });
   const dispatch = useDispatch();
-  // let state;
-  const state = useSelector(
-    (state1) => ({
-      // banner: state.getIn("recommend", "topBanners"),
-      // banner: state.get("recommend").get("topBanners"),
-      banners: state1.recommend.get("topBanners"),
-    }),
-    shallowEqual
-  );
+  const select = (state1) => state1.recommend.get("topBanners");
+  const stateSelector = createSelector([select], (a) => ({
+    banners: a,
+  }));
+  useEffect(() => {
+    function updateState() {
+      setState(stateSelector(store.getState()));
+    }
+    const fun = store.subscribe(updateState);
+    return fun;
+  }, [stateSelector]);
 
   const bannerRef = useRef();
 
@@ -30,12 +38,13 @@ export default memo(function RecommendBanner() {
     }, 0);
   }, []);
 
-  const bgImage =
+  const bgimage =
+    state.banners &&
     state.banners[currentIndex] &&
-    state.banners[currentIndex].imageUrl + "?imageView&blur=40x20";
+    `${state.banners[currentIndex].imageUrl}?imageView&blur=40x20`;
 
   return (
-    <BannerWrapper bgImage={bgImage}>
+    <BannerWrapper $bgimage={bgimage}>
       <div className="banner wrap-v2">
         <BannerLeft>
           <Carousel

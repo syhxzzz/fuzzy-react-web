@@ -1,4 +1,4 @@
-import React, { Fragment, li, memo } from "react";
+import React, { Fragment, memo } from "react";
 import { AppFooterWrapper, FooterLeft, FooterRight } from "./style";
 import { footerLinks, footerImages } from "@/services/local-data";
 export default memo(function HYAppFooter() {
@@ -9,7 +9,7 @@ export default memo(function HYAppFooter() {
           <div className="link">
             {footerLinks.map((item, index) => {
               return (
-                <Fragment className="item" key={item.title}>
+                <Fragment key={item.title}>
                   <a className="link" href={item.link} target="_blank">
                     {item.title}
                   </a>
@@ -56,9 +56,9 @@ export default memo(function HYAppFooter() {
           </div>
         </FooterLeft>
         <FooterRight className="right">
-          {footerImages.map((item) => {
+          {footerImages.map((item, index) => {
             return (
-              <li className="item" key={item.title}>
+              <li className="item" key={index}>
                 <a
                   className="link"
                   href={item.link}

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const BannerWrapper = styled.div`
-  background: url(${(props) => props.bgImage}) center center/6000px;
+  background: url(${(props) => props.$bgimage}) center center/6000px;
 
   .banner {
     height: 270px;
@@ -30,7 +30,7 @@ export const BannerRight = styled.a.attrs({
 })`
   width: 254px;
   height: 270px;
-  background: url(${require("@/assets/img/download.png")});
+  background: url("/assets/img/download.png");
 `;
 
 export const BannerControl = styled.div`
@@ -44,7 +44,7 @@ export const BannerControl = styled.div`
     position: absolute;
     width: 37px;
     height: 63px;
-    background-image: url(${require("@/assets/img/banner_sprite.png")});
+    background-image: url("/assets/img/banner_sprite.png");
     background-color: transparent;
     cursor: pointer;
 

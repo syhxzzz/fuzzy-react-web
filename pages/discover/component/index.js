@@ -2,10 +2,9 @@ import React, { memo } from "react";
 import { DiscoverWrapper, TopMenu } from "./style";
 import { discoverMenu } from "@/services/local-data.js";
 import Link from "next/link";
-import AppLayout from "@/components/app-layout";
 export default memo(function DiscoverHeaderWrapper({ children }) {
   return (
-    <AppLayout>
+    <div>
       <DiscoverWrapper>
         <div className="top">
           <TopMenu className="wrap-v1">
@@ -20,6 +19,6 @@ export default memo(function DiscoverHeaderWrapper({ children }) {
         </div>
       </DiscoverWrapper>
       {children}
-    </AppLayout>
+    </div>
   );
 });

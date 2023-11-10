@@ -1,4 +1,4 @@
-import Immutable, { Map } from "immutable";
+import { Map } from "immutable";
 import * as actionTypes from "./constants";
 
 const defaultState = Map({
@@ -14,7 +14,7 @@ const defaultState = Map({
 
 export default function reducer(state = defaultState, action) {
   switch (action.type) {
-    case actionTypes.CHANGE_TOP_BNNAER:
+    case actionTypes.CHANGE_TOP_BANNER:
       return state.set("topBanners", action.banners);
     case actionTypes.CHANGE_HOT_RECOMMEND:
       return state.set("hotRecommends", action.recommends);
@@ -26,7 +26,7 @@ export default function reducer(state = defaultState, action) {
       return state.set("topNewList", action.topNewList);
     case actionTypes.CHANGE_ORIGIN_LIST:
       return state.set("topOriginList", action.topOriginList);
-    case actionTypes.CHANGE_SETTLE_SONGER:
+    case actionTypes.CHANGE_SETTLE_SINGER:
       return state.set("settleSings", action.settleSings);
     default:
       return state;
