@@ -7,7 +7,7 @@ import { ThemeCoverWrapper } from "./style";
 export default memo(function ThemeCover(props) {
   const { info, right } = props;
   return (
-    <ThemeCoverWrapper>
+    <ThemeCoverWrapper right={right}>
       <div className="cover-top">
         <picture>
           <img

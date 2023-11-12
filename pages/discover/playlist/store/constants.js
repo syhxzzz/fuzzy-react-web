@@ -1,0 +1,5 @@
+export const CHANGE_CATEGORY = "playlist/CHANGE_CATEGORY";
+export const CHANGE_CURRENT_CATEGORY = "playlist/CHANGE_CURRENT_CATEGORY";
+export const CHANGE_CATEGORY_PLAYLISTS = "playlist/CHANGE_CATEGORY_PLAYLISTS";
+
+export const PER_PAGE_NUMBER = 35;
