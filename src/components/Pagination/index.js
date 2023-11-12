@@ -19,7 +19,8 @@ export default memo(function Pagination1(props) {
         className="pagination"
         size="small"
         total={total}
-        defaultCurrent={1}
+        // defaultCurrent={1}
+        current={current}
         pageSize={pageSize}
         showSizeChanger={false}
         itemRender={itemRender}

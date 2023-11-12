@@ -14,7 +14,10 @@ export default memo(function Playlist() {
   return (
     <DiscoverHeaderWrapper>
       <PlayListWrapper className="wrap-v2">
-        <PlaylistHeader changeCurrentPage={changeCurrentPage} />
+        <PlaylistHeader
+          changeCurrentPage={changeCurrentPage}
+          currentPage={currentPage}
+        />
         <PlaylistPart
           currentPage={currentPage}
           changeCurrentPage={changeCurrentPage}

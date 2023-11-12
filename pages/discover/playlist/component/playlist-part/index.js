@@ -19,14 +19,6 @@ export default memo(function PlayListPartHeader(props) {
   }, [dispatch]);
 
   useEffect(() => {
-    function updatePageWhenCategoryChange() {
-      changeCurrentPage(1);
-    }
-    const fun = store.subscribe(updatePageWhenCategoryChange);
-    return fun;
-  }, [changeCurrentPage]);
-
-  useEffect(() => {
     function updateState() {
       setCategoryPlaylists({
         playlistList:
@@ -40,6 +32,8 @@ export default memo(function PlayListPartHeader(props) {
 
   function onPageChange(page) {
     changeCurrentPage(page);
+    console.log("page:" + page + "\ncurrentPage:" + currentPage);
+
     dispatch(getPlaylistList(page));
   }
 
@@ -51,7 +45,7 @@ export default memo(function PlayListPartHeader(props) {
         })}
       </div>
       <Pagination
-        currentPage={currentPage}
+        current={currentPage}
         onPageChange={onPageChange}
         total={categoryPlaylists.total}
         pageSize={PER_PAGE_NUMBER}

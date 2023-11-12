@@ -1,13 +1,12 @@
 import { memo, useState, useEffect } from "react";
 import { PlayListHeaderWrapper, HeaderLeft, HeaderRight } from "./style";
 import PlaylistCategory from "../playlist-category";
-import { current } from "@reduxjs/toolkit";
 import store from "@/store";
 import { useDispatch } from "react-redux";
 import { getCategory } from "../../store/actionCreators";
 
 export default memo(function PlayListHeader(props) {
-  const { changeCurrentPage } = props;
+  const { currentPage, changeCurrentPage } = props;
   const [showCategory, setShowCategory] = useState(false);
   const currentCategory = store.getState().playlist.get("currentCategory");
   const dispatch = useDispatch();
@@ -35,7 +34,10 @@ export default memo(function PlayListHeader(props) {
         </button>
       </HeaderLeft>
       {showCategory && (
-        <PlaylistCategory changeCurrentPage={changeCurrentPage} />
+        <PlaylistCategory
+          changeCurrentPage={changeCurrentPage}
+          currentPage={currentPage}
+        />
       )}
       <HeaderRight>
         <button className="hot">热门</button>

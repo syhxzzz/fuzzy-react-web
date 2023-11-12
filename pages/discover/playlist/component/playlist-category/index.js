@@ -6,8 +6,9 @@ import {
   changeCurrentCategoryAction,
   getPlaylistList,
 } from "../../store/actionCreators";
+import { current } from "@reduxjs/toolkit";
 export default memo(function PlaylistCategory(props) {
-  const { changeCurrentPage } = props;
+  const { currentPage, changeCurrentPage } = props;
   const category = store.getState().playlist.get("category");
   const dispatch = useDispatch();
   function selectCategory(name) {
@@ -45,6 +46,7 @@ export default memo(function PlaylistCategory(props) {
                         onClick={(e) => {
                           selectCategory(sItem.name);
                           changeCurrentPage(1);
+                          console.log(currentPage);
                         }}
                       >
                         {sItem.name}
