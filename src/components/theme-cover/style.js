@@ -7,7 +7,7 @@ export const ThemeCoverWrapper = styled.div`
   .cover-top {
     position: relative;
 
-    & > img {
+    img {
       width: 140px;
       height: 140px;
     }
