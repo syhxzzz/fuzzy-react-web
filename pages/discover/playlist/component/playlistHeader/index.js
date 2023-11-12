@@ -1,6 +1,6 @@
 import { memo, useState, useEffect } from "react";
 import { PlayListHeaderWrapper, HeaderLeft, HeaderRight } from "./style";
-import PlaylistCategory from "./component/playlistCategory";
+import PlaylistCategory from "../playlist-category";
 import { current } from "@reduxjs/toolkit";
 import store from "@/store";
 import { useDispatch } from "react-redux";
@@ -13,22 +13,27 @@ export default memo(function PlayListHeader() {
   useEffect(() => {
     dispatch(getCategory());
   }, [dispatch]);
+  useEffect(() => {
+    document.addEventListener("click", () => {
+      setShowCategory(false);
+    });
+  }, []);
   return (
     <PlayListHeaderWrapper>
       <HeaderLeft>
         <span className="title">{currentCategory}</span>
         <button
           className="select"
-          onClick={() => {
+          onClick={(e) => {
+            e.stopPropagation();
             setShowCategory(!showCategory);
-            console.log(11);
           }}
         >
           <span>选择分类</span>
           <i className="sprite_icon2"></i>
         </button>
       </HeaderLeft>
-      {showCategory && <PlaylistCategory></PlaylistCategory>}
+      {showCategory && <PlaylistCategory />}
       <HeaderRight>
         <button className="hot">热门</button>
       </HeaderRight>

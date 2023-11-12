@@ -16,6 +16,7 @@ export const HeaderLeft = styled.div`
     font-family: "Microsoft Yahei", Arial, Helvetica, sans-serif;
   }
   .select {
+    cursor: pointer;
     position: relative;
     top: 2px;
     width: 91px;
