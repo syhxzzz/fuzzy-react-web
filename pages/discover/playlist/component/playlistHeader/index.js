@@ -6,7 +6,8 @@ import store from "@/store";
 import { useDispatch } from "react-redux";
 import { getCategory } from "../../store/actionCreators";
 
-export default memo(function PlayListHeader() {
+export default memo(function PlayListHeader(props) {
+  const { changeCurrentPage } = props;
   const [showCategory, setShowCategory] = useState(false);
   const currentCategory = store.getState().playlist.get("currentCategory");
   const dispatch = useDispatch();
@@ -33,7 +34,9 @@ export default memo(function PlayListHeader() {
           <i className="sprite_icon2"></i>
         </button>
       </HeaderLeft>
-      {showCategory && <PlaylistCategory />}
+      {showCategory && (
+        <PlaylistCategory changeCurrentPage={changeCurrentPage} />
+      )}
       <HeaderRight>
         <button className="hot">热门</button>
       </HeaderRight>

@@ -6,7 +6,8 @@ import {
   changeCurrentCategoryAction,
   getPlaylistList,
 } from "../../store/actionCreators";
-export default memo(function PlaylistCategory() {
+export default memo(function PlaylistCategory(props) {
+  const { changeCurrentPage } = props;
   const category = store.getState().playlist.get("category");
   const dispatch = useDispatch();
   function selectCategory(name) {
@@ -17,7 +18,13 @@ export default memo(function PlaylistCategory() {
     <PlaylistCategoryWrapper>
       <div className="arrow sprite_icon"></div>
       <div className="all">
-        <span className="link" onClick={(e) => selectCategory("全部")}>
+        <span
+          className="link"
+          onClick={(e) => {
+            selectCategory("全部");
+            changeCurrentPage(1);
+          }}
+        >
           全部风格
         </span>
       </div>
@@ -35,7 +42,10 @@ export default memo(function PlaylistCategory() {
                     <div className="item" key={sItem.name}>
                       <span
                         className="link"
-                        onClick={(e) => selectCategory(sItem.name)}
+                        onClick={(e) => {
+                          selectCategory(sItem.name);
+                          changeCurrentPage(1);
+                        }}
                       >
                         {sItem.name}
                       </span>

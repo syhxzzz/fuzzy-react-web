@@ -6,8 +6,8 @@ import { getPlaylistList } from "../../store/actionCreators";
 import ThemeCover from "@/components/theme-cover";
 import Pagination from "@/components/Pagination";
 import { PER_PAGE_NUMBER } from "../../store/constants";
-export default memo(function PlayListPartHeader() {
-  const [currentPage, setCurrentPage] = useState(1);
+export default memo(function PlayListPartHeader(props) {
+  const { currentPage, changeCurrentPage } = props;
   const [categoryPlaylists, setCategoryPlaylists] = useState({
     playlistList: [],
     total: 0,
@@ -20,11 +20,11 @@ export default memo(function PlayListPartHeader() {
 
   useEffect(() => {
     function updatePageWhenCategoryChange() {
-      setCurrentPage(1);
+      changeCurrentPage(1);
     }
     const fun = store.subscribe(updatePageWhenCategoryChange);
     return fun;
-  }, []);
+  }, [changeCurrentPage]);
 
   useEffect(() => {
     function updateState() {
@@ -39,9 +39,10 @@ export default memo(function PlayListPartHeader() {
   }, []);
 
   function onPageChange(page) {
-    setCurrentPage(page);
+    changeCurrentPage(page);
     dispatch(getPlaylistList(page));
   }
+
   return (
     <PlayListPartWrapper>
       <div className="playlists-list">

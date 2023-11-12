@@ -6,14 +6,19 @@ import DiscoverHeaderWrapper from "../component/index";
 
 export default memo(function Playlist() {
   const [currentPage, setCurrentPage] = useState(1);
+
+  const changeCurrentPage = (num) => {
+    setCurrentPage(num);
+  };
+
   return (
     <DiscoverHeaderWrapper>
       <PlayListWrapper className="wrap-v2">
-        <PlaylistHeader
+        <PlaylistHeader changeCurrentPage={changeCurrentPage} />
+        <PlaylistPart
           currentPage={currentPage}
-          setCurrentPage={(num) => setCurrentPage(num)}
+          changeCurrentPage={changeCurrentPage}
         />
-        <PlaylistPart />
       </PlayListWrapper>
     </DiscoverHeaderWrapper>
   );
