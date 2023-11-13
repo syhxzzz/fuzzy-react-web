@@ -13,18 +13,25 @@ export default memo(function TopRanking() {
 
   useEffect(() => {
     function updateState() {
-      setCurrentIndex(store.getState().toplist.get("currentIndex"));
-      setTopList(store.getState().toplist.get("topList"));
+      const nextCurrentIndex = store.getState().toplist.get("currentIndex");
+      const nextTopList = store.getState().toplist.get("topList");
+      setCurrentIndex(nextCurrentIndex);
+      setTopList(nextTopList);
+      const id =
+        nextTopList[nextCurrentIndex] && nextTopList[nextCurrentIndex].id;
+      if (!id) return;
+      console.log("ID = " + id);
+      dispatch(getRanking(id));
     }
     const fun = store.subscribe(updateState);
     return fun;
-  }, []);
+  }, [dispatch]);
 
-  useEffect(() => {
-    const id = topList[currentIndex] && topList[currentIndex].id;
-    if (!id) return;
-    dispatch(getRanking(id));
-  }, [currentIndex, dispatch, topList]);
+  //   useEffect(() => {
+  //     const id = topList[currentIndex] && topList[currentIndex].id;
+  //     if (!id) return;
+  //     dispatch(getRanking(id));
+  //   }, [currentIndex, dispatch, topList]);
 
   const handleItemClick = (index) => {
     dispatch(changeCurrentIndex(index));

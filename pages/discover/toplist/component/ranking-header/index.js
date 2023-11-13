@@ -2,14 +2,17 @@ import { memo, useEffect, useState } from "react";
 import { RankingHeaderWrapper } from "./style";
 import store from "@/store";
 export default memo(function RankingHeader() {
-  const [topInfo, setTopInfo] = useState({});
+  const [topInfo, setTopInfo] = useState({ coverImgUrl: "" });
   useEffect(() => {
     function updateState() {
+      console.log(
+        "topInfo:" + topInfo + "\n" + store.getState().toplist.get("playList")
+      );
       setTopInfo(store.getState().toplist.get("playList"));
     }
     const fun = store.subscribe(updateState);
     return fun;
-  }, []);
+  }, [topInfo]);
   return (
     <RankingHeaderWrapper>
       <div className="image">
