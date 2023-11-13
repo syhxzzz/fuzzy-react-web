@@ -2,9 +2,7 @@ import React from "react";
 import { Redirect } from "next";
 
 const HYDiscover = React.lazy(() => import("../../pages/discover/recommend"));
-const HYRanking = React.lazy(() =>
-  import("@/../pages/discover/c-pages/ranking")
-);
+const HYRanking = React.lazy(() => import("@/../pages/discover/toplist"));
 export default AA[
   ({
     path: "/",
@@ -25,7 +23,7 @@ export default AA[
         component: HYDiscover,
       },
       {
-        path: "/discover/ranking",
+        path: "/discover/toplist",
         component: HYRanking,
       },
     ],
