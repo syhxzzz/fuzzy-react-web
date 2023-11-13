@@ -13,32 +13,21 @@ export default memo(function TopRanking() {
 
   useEffect(() => {
     function updateState() {
-      const nextCurrentIndex = store.getState().toplist.get("currentIndex");
-      const nextTopList = store.getState().toplist.get("topList");
-      setCurrentIndex(nextCurrentIndex);
-      setTopList(nextTopList);
-      const id =
-        nextTopList[nextCurrentIndex] && nextTopList[nextCurrentIndex].id;
-      if (!id) return;
-      console.log("ID = " + id);
-      dispatch(getRanking(id));
+      setCurrentIndex(store.getState().toplist.get("currentIndex"));
+      setTopList(store.getState().toplist.get("topList"));
     }
     const fun = store.subscribe(updateState);
     return fun;
   }, [dispatch]);
 
-  //   useEffect(() => {
-  //     const id = topList[currentIndex] && topList[currentIndex].id;
-  //     if (!id) return;
-  //     dispatch(getRanking(id));
-  //   }, [currentIndex, dispatch, topList]);
-
   const handleItemClick = (index) => {
     dispatch(changeCurrentIndex(index));
-    const id = state.topList[currentIndex].id;
+    const id = topList[currentIndex].id;
     dispatch(getRanking(id));
   };
-
+  const id = topList[currentIndex] && topList[currentIndex].id;
+  if (!id) return;
+  dispatch(getRanking(id));
   return (
     <TopRankingWrapper>
       {topList.map((item, index) => {

@@ -25,9 +25,9 @@ export const getTops = () => {
   };
 };
 
-export const getRanking = () => {
+export const getRanking = (id) => {
   return (dispatch) => {
-    getRankingList().then((res) => {
+    getRankingList(id).then((res) => {
       dispatch(changePlayListAction(res));
     });
   };

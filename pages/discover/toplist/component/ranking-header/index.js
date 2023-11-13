@@ -5,9 +5,6 @@ export default memo(function RankingHeader() {
   const [topInfo, setTopInfo] = useState({ coverImgUrl: "" });
   useEffect(() => {
     function updateState() {
-      console.log(
-        "topInfo:" + topInfo + "\n" + store.getState().toplist.get("playList")
-      );
       setTopInfo(store.getState().toplist.get("playList"));
     }
     const fun = store.subscribe(updateState);
@@ -17,9 +14,9 @@ export default memo(function RankingHeader() {
     <RankingHeaderWrapper>
       <div className="image">
         <picture>
-          {/* <img alt="封面图片" src={topInfo.coverImgUrl} /> */}
+          <img alt="封面图片" src={topInfo.coverImgUrl} />
         </picture>
-        <span className="image_cover">封面</span>
+        {/* <span className="image_cover">封面</span> */}
       </div>
     </RankingHeaderWrapper>
   );
