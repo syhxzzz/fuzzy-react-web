@@ -18,20 +18,16 @@ export default memo(function TopRanking() {
     }
     const fun = store.subscribe(updateState);
     return fun;
-  }, []);
-
-  useEffect(() => {
-    const id = topList[currentIndex] && topList[currentIndex].id;
-    if (!id) return;
-    dispatch(getRanking(id));
-  }, [currentIndex, dispatch, topList]);
+  }, [dispatch]);
 
   const handleItemClick = (index) => {
     dispatch(changeCurrentIndex(index));
-    const id = state.topList[currentIndex].id;
+    const id = topList[currentIndex].id;
     dispatch(getRanking(id));
   };
-
+  const id = topList[currentIndex] && topList[currentIndex].id;
+  if (!id) return;
+  dispatch(getRanking(id));
   return (
     <TopRankingWrapper>
       {topList.map((item, index) => {

@@ -16,7 +16,7 @@ export const TopRankingWrapper = styled.div`
     cursor: pointer;
     display: flex;
     align-items: center;
-    .active,
+    &.active,
     &:hover {
       background-color: #e6e6e6;
     }

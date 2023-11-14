@@ -4,7 +4,7 @@ import * as actionTypes from "./constants";
 const defaultState = Map({
   topList: [],
   currentIndex: 0,
-  playList: {},
+  playList: { coverImgUrl: "" },
 });
 
 export const reducer = function (state = defaultState, action) {
