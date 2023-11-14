@@ -31,6 +31,37 @@ export const RankingListWrapper = styled.div`
       tbody {
         td {
           padding: 6px 10px;
+          &:hover .duration {
+            display: none;
+            position: absolute;
+          }
+          &:hover .icon-bar {
+            position: absolute;
+            .add-icon {
+              display: inline-block;
+              width: 18px;
+              height: 18px;
+              background-position: 0 -700px;
+            }
+            .favor-icon {
+              display: inline-block;
+              width: 18px;
+              height: 18px;
+              background-position: -45px -87px;
+            }
+            .share-icon {
+              display: inline-block;
+              width: 18px;
+              height: 18px;
+              background-position: -45px -137px;
+            }
+            .download-icon {
+              display: inline-block;
+              width: 18px;
+              height: 18px;
+              background-position: -17px -717px;
+            }
+          }
         }
         tr:nth-child(2n) {
           background-color: #fff;

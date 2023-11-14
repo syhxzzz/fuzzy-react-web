@@ -51,7 +51,20 @@ export default memo(function RankingList() {
                       <span className="name">{item.name}</span>
                     </div>
                   </td>
-                  <td>{formatMinuteSecond(item.dt)}</td>
+                  <td>
+                    <span className="duration">
+                      {formatMinuteSecond(item.dt)}
+                    </span>
+                    <div className="icon-bar">
+                      <a href="/todo" className="add-icon sprite_icon2"></a>
+                      <a href="/todo" className="favor-icon sprite_icon2"></a>
+                      <a href="/todo" className="share-icon sprite_icon2"></a>
+                      <a
+                        href="/todo"
+                        className="download-icon sprite_icon2"
+                      ></a>
+                    </div>
+                  </td>
                   <td>{item.ar[0].name}</td>
                 </tr>
               );
