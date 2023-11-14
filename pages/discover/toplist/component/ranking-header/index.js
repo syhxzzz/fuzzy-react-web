@@ -11,7 +11,7 @@ export default memo(function RankingHeader() {
     }
     const fun = store.subscribe(updateState);
     return fun;
-  }, [topInfo]);
+  }, []);
   return (
     <RankingHeaderWrapper>
       <div className="image">
