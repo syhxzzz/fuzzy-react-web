@@ -4,7 +4,8 @@ export const RankingListWrapper = styled.div`
 
   .play-list {
     table {
-      border-top: 5px solid #ab2c17;
+      border: 1px solid #d9d9d9;
+      border-top: 3px solid #ab2c17;
       width: 100%;
       thead {
         th {
@@ -37,9 +38,9 @@ export const RankingListWrapper = styled.div`
         tr:nth-child(2n + 1) {
           background-color: #f7f7f7;
         }
+
         .ranking-num {
           display: flex;
-          justify-content: center;
 
           .num {
             width: 25px;
@@ -55,6 +56,7 @@ export const RankingListWrapper = styled.div`
             background-position: -67px -283px;
           }
         }
+
         .song-name {
           display: flex;
           align-items: center;
@@ -71,7 +73,7 @@ export const RankingListWrapper = styled.div`
           }
 
           .name {
-            margin-left: 5px;
+            margin-left: 10px;
           }
         }
       }
