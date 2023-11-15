@@ -64,9 +64,7 @@ export default memo(function HYAppHeader() {
             }}
           />
           {clickSearch && inputWord != "" && (
-            <div className="searchContent">
-              <SearchContent inputWord={inputWord} />
-            </div>
+            <SearchContent inputWord={inputWord} />
           )}
           <div className="center">
             <a style={{ color: "white", textDecoration: "none" }}>创作者中心</a>
