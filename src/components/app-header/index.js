@@ -1,4 +1,4 @@
-import React, { memo, useState } from "react";
+import React, { memo, useState, useEffect } from "react";
 import Link from "next/link";
 import classnames from "classnames";
 
@@ -36,6 +36,12 @@ export default memo(function HYAppHeader() {
     console.log(nextInput);
   }
 
+  useEffect(() => {
+    document.addEventListener("click", () => {
+      setClickSearch(false);
+    });
+  }, []);
+
   return (
     <AppHeaderWrapper>
       <div className="wrap-v1 content">
@@ -58,8 +64,9 @@ export default memo(function HYAppHeader() {
             prefix={<SearchOutlined />}
             value={inputWord}
             onChange={(e) => handleInputChange(e)}
-            onClick={() => {
+            onClick={(e) => {
               setClickSearch(true);
+              e.stopPropagation();
               console.log("clickSearch is true");
             }}
           />

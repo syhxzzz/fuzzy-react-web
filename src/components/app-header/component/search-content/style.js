@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const SearchContentWrapper = styled.div`
+  z-index: 99;
   position: absolute;
   width: 240px;
   background-color: #fff;
