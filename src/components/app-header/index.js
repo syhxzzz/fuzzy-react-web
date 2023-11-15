@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React, { memo, useState } from "react";
 import Link from "next/link";
 import classnames from "classnames";
 
@@ -8,8 +8,11 @@ import { Input } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 
 import { AppHeaderWrapper, HeaderLeft, HeaderRight } from "./style";
+import SearchContent from "./component/search-content";
 
 export default memo(function HYAppHeader() {
+  const [inputWord, setInputWord] = useState("");
+  const [clickSearch, setClickSearch] = useState(false);
   const showItem = (item, index) => {
     if (index < 3) {
       return (
@@ -26,6 +29,12 @@ export default memo(function HYAppHeader() {
       );
     }
   };
+
+  function handleInputChange(e) {
+    let nextInput = e.target.value;
+    setInputWord(nextInput);
+    console.log(nextInput);
+  }
 
   return (
     <AppHeaderWrapper>
@@ -47,7 +56,18 @@ export default memo(function HYAppHeader() {
             className="search"
             placeholder="音乐/视频/电台/用户"
             prefix={<SearchOutlined />}
+            value={inputWord}
+            onChange={(e) => handleInputChange(e)}
+            onClick={() => {
+              setClickSearch(true);
+              console.log("clickSearch is true");
+            }}
           />
+          {clickSearch && inputWord != "" && (
+            <div className="searchContent">
+              <SearchContent inputWord={inputWord} />
+            </div>
+          )}
           <div className="center">
             <a style={{ color: "white", textDecoration: "none" }}>创作者中心</a>
           </div>
