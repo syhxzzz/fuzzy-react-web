@@ -6,6 +6,7 @@ import RankingList from "./component/ranking-list";
 import { TopListWrapper, TopListLeft, TopListRight } from "./style";
 import { getTops } from "./store/actionCreators";
 import { useDispatch } from "react-redux";
+import UserComment from "./component/user-comment";
 export default memo(function TopList() {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -20,6 +21,7 @@ export default memo(function TopList() {
         <TopListRight>
           <RankingHeader />
           <RankingList />
+          <UserComment />
         </TopListRight>
       </TopListWrapper>
     </DiscoverHeaderWrapper>

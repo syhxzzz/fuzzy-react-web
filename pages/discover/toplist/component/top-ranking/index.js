@@ -18,7 +18,7 @@ export default memo(function TopRanking() {
     }
     const fun = store.subscribe(updateState);
     return fun;
-  }, [dispatch]);
+  }, []);
 
   const handleItemClick = (index) => {
     dispatch(changeCurrentIndex(index));
