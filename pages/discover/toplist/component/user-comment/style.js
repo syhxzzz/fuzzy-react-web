@@ -3,12 +3,15 @@ export const UserCommentWrapper = styled.div`
   .comment-title {
     font-weight: 500;
     border-bottom: 1px solid #dedede;
-    margin: 15px 40px;
+    margin: 0 40px;
+    margin-top: 15px;
     font-size: 16px;
   }
   .comment {
-    margin: 15px 40px;
+    padding: 15px 0;
+    margin: 0 40px;
     display: flex;
+    border-bottom: 1px dotted #cccccc;
     .content {
       display: flex;
       flex-direction: column;
