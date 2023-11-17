@@ -26,20 +26,32 @@ export default memo(function UserComment() {
   }, [currentPage, currentIndex, toplist]);
   return (
     <UserCommentWrapper>
+      <div className="comment-title">精彩评论</div>
       {result.map((item) => {
         return (
-          <div className="comment " key={item.commentId}>
+          <div className="comment" key={item.commentId}>
             <picture>
               <img alt="user-avatar" src={item.user.avatarUrl} />
             </picture>
             <div className="content">
-              <div className="user-name">{item.user.nickname}</div>
-              <div className="comment-content">{item.content}</div>
-            </div>
-            <div className="time-clock">{item.timeStr}</div>
-            <div className="interaction">
-              <div className="likes">{item.likedCount}</div>
-              <div className="reply">回复</div>
+              <div className="body">
+                <p>
+                  <i className="user-name">{item.user.nickname}</i>
+                  {` : `}
+                  <i className="comment-content">{item.content}</i>
+                </p>
+              </div>
+              <div className="comment-bottom">
+                <div className="time-clock">{item.timeStr}</div>
+                <div className="interaction">
+                  <a className="likes">
+                    <div className="like-icon sprite_icon2"></div>
+                    <div className="likes-num">({item.likedCount})</div>
+                  </a>
+                  <div className="divider">{`|`}</div>
+                  <div className="reply">回复</div>
+                </div>
+              </div>
             </div>
           </div>
         );
