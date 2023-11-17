@@ -1,5 +1,5 @@
 import React, { memo, useEffect, useState } from "react";
-import { getTopData } from "../../store/actionCreators";
+import { getTopData } from "../../../store/discover-recommend-store/actionCreators";
 import { RankingWrapper } from "./style";
 import ThemeHeaderRCM from "@/components/theme-header-rcm";
 import { shallowEqual, useDispatch } from "react-redux";

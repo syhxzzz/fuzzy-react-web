@@ -2,7 +2,7 @@ import React, { memo, useCallback, useEffect, useRef, useState } from "react";
 import { RecommendWrapper } from "./style";
 import { useDispatch } from "react-redux";
 import { useRouter } from "next/router";
-import { getRecommend } from "../../store/actionCreators";
+import { getRecommend } from "../../../store/discover-recommend-store/actionCreators";
 import ThemeCover from "@/components/theme-cover";
 import ThemeHeaderRCM from "@/components/theme-header-rcm";
 import { createSelector } from "@reduxjs/toolkit";

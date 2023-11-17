@@ -2,7 +2,10 @@ import { memo, useEffect, useState } from "react";
 import { TopRankingWrapper } from "./style";
 import store from "@/store";
 import { useDispatch } from "react-redux";
-import { getRanking, changeCurrentIndex } from "../../store/actionCreators";
+import {
+  getRanking,
+  changeCurrentIndex,
+} from "../../store/discover-toplist-store/actionCreators";
 import { getSizeImage } from "@/utils/format-utils";
 import classNames from "classnames";
 export default memo(function TopRanking() {

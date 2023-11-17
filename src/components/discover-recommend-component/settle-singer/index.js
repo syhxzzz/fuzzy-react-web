@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { createSelector } from "@reduxjs/toolkit";
 import store from "@/store";
 import { SetterSingerWrapper } from "./style";
-import { getSettleSingers } from "../../store/actionCreators";
+import { getSettleSingers } from "../../../store/discover-recommend-store/actionCreators";
 import ThemeHeaderSmall from "@/components/theme-header-small";
 import { getSizeImage } from "@/utils/format-utils";
 export default memo(function SettleSinger() {

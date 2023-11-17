@@ -3,7 +3,7 @@ import { PlayListHeaderWrapper, HeaderLeft, HeaderRight } from "./style";
 import PlaylistCategory from "../playlist-category";
 import store from "@/store";
 import { useDispatch } from "react-redux";
-import { getCategory } from "../../store/actionCreators";
+import { getCategory } from "../../../store/discover-playlist-store/actionCreators";
 
 export default memo(function PlayListHeader(props) {
   const { currentPage, changeCurrentPage } = props;

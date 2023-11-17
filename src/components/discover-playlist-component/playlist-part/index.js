@@ -2,10 +2,10 @@ import { memo, useState, useEffect } from "react";
 import { PlayListPartWrapper } from "./style";
 import store from "@/store";
 import { useDispatch } from "react-redux";
-import { getPlaylistList } from "../../store/actionCreators";
+import { getPlaylistList } from "../../../store/discover-playlist-store/actionCreators";
 import ThemeCover from "@/components/theme-cover";
 import Pagination from "@/components/Pagination";
-import { PER_PAGE_NUMBER } from "../../store/constants";
+import { PER_PAGE_NUMBER } from "../../../store/discover-playlist-store/constants";
 export default memo(function PlayListPartHeader(props) {
   const { currentPage, changeCurrentPage } = props;
   const [categoryPlaylists, setCategoryPlaylists] = useState({

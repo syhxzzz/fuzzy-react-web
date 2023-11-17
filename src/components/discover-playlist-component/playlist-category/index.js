@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import {
   changeCurrentCategoryAction,
   getPlaylistList,
-} from "../../store/actionCreators";
+} from "../../../store/discover-playlist-store/actionCreators";
 import { current } from "@reduxjs/toolkit";
 export default memo(function PlaylistCategory(props) {
   const { currentPage, changeCurrentPage } = props;

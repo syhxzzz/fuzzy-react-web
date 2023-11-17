@@ -7,7 +7,7 @@ import {
   BannerRight,
 } from "./style.js";
 import { Carousel } from "antd";
-import { getBanner } from "../../store/actionCreators";
+import { getBanner } from "../../../store/discover-recommend-store/actionCreators.js";
 import store from "@/store/index.js";
 import { createSelector } from "@reduxjs/toolkit";
 export default memo(function RecommendBanner() {

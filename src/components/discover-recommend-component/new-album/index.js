@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, memo, useState } from "react";
 import { Carousel } from "antd";
 import ThemeHeaderRCM from "@/components/theme-header-rcm";
-import { getAlbum } from "../../store/actionCreators";
+import { getAlbum } from "../../../store/discover-recommend-store/actionCreators";
 import { useDispatch } from "react-redux";
 import { AlbumWrapper } from "./style";
 import AlbumCover from "@/components/album-cover";
