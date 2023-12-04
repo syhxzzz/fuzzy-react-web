@@ -20,7 +20,10 @@ export const SearchContentWrapper = styled.div`
     color: #666;
   }
   .item {
-    margin: 5px;
+    padding: 5px;
+    &:hover {
+      background-color: #ccc;
+    }
   }
 
   .search-content {
