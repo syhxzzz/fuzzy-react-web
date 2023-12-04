@@ -6,7 +6,7 @@ import {
   getSimiSong,
 } from "@/services/player";
 import { parseLyric } from "@/utils/lrc-parse";
-
+import store from "..";
 const changeCurrentSongAction = (song) => ({
   type: actionTypes.CHANGE_CURRENT_SONG,
   song,
@@ -51,8 +51,8 @@ export const changePlaySequenceAction = (currentSequence) => {
 };
 
 export const getSimiSongAction = () => {
-  return (dispatch, getState) => {
-    const id = getState().song.get("currentSong").id;
+  return (dispatch) => {
+    const id = store.getState().song.get("currentSong").id;
     if (!id) return;
     getSimiSong(id).then((res) => {
       dispatch(changeSimiSongAction(res));
@@ -61,8 +61,8 @@ export const getSimiSongAction = () => {
 };
 
 export const getSimiPlaylistAction = () => {
-  return (dispatch, getState) => {
-    const id = getState().song.get("currentSong").id;
+  return (dispatch) => {
+    const id = store.getState().song.get("currentSong").id;
     if (!id) return;
     getSimiPlaylist(id).then((res) => {
       dispatch(changeSimiPlaylistAction(res));
@@ -71,8 +71,8 @@ export const getSimiPlaylistAction = () => {
 };
 
 export const getSongDetailAction = (ids) => {
-  return (dispatch, getState) => {
-    const playList = getState().song.get("playList");
+  return (dispatch) => {
+    const playList = store.getState().song.get("playList");
 
     const songIndex = playList.findIndex((song) => song.id === ids);
     if (songIndex !== -1) {
@@ -98,11 +98,12 @@ export const getSongDetailAction = (ids) => {
 };
 
 export const changePlaySongAction = (tag) => {
-  return (dispatch, getState) => {
+  return (dispatch) => {
     // 1.获取当前的index
-    let currentSongIndex = getState().getIn(["player", "currentSongIndex"]);
-    const playSequence = getState().getIn(["player", "playSequence"]);
-    const playList = getState().getIn(["player", "playList"]);
+
+    let currentSongIndex = store.getState().song.get("currentSongIndex");
+    const playSequence = store.getState().song.get("playSequence");
+    const playList = store.getState().song.get("playList");
 
     // 2.判断当前播放列表
     switch (playSequence) {
