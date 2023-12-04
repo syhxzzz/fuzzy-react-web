@@ -23,39 +23,60 @@ export const SearchContentWrapper = styled.div`
     margin: 5px;
   }
 
+  .search-content {
+    position: relative;
+  }
+
+  .search-title {
+    margin-top: 5px;
+  }
+
+  .left {
+    width: 60px;
+    display: flex;
+  }
+
   .song-part {
     display: flex;
     .song-icon {
-      padding: 5px;
-      width: 50px;
+      margin: 5px;
+      width: 18px;
+      height: 18px;
+      background-position: -32px -298px;
     }
   }
   .artist-part {
     display: flex;
     .artist-icon {
-      padding: 5px;
-      width: 50px;
+      margin: 5px;
+      width: 18px;
+      height: 18px;
+      background-position: -49px -298px;
     }
   }
   .album-part {
     display: flex;
     .album-icon {
-      padding: 5px;
-      width: 50px;
+      margin: 5px;
+      width: 18px;
+      height: 18px;
+      background-position: -32px -316px;
     }
   }
   .playlist-part {
     display: flex;
     .playlist-icon {
-      padding: 5px;
-      width: 50px;
+      margin: 5px;
+      width: 18px;
+      height: 18px;
+      background-position: -49px -316px;
     }
   }
   .song-list,
   .album-list,
   .playlist-list,
   .artist-list {
-    /* width: 180px; */
+    width: 180px;
     text-overflow: ellipsis; /*让截断的文字显示为点点。还有一个值是clip意截断不显示点点*/
     white-space: nowrap; /*让文字不换行*/
     overflow: hidden; /*超出要隐藏*/
