@@ -23,6 +23,7 @@ export async function getPlayUrl(id) {
       type: "standard",
     },
   }).then((res) => {
+    console.log(res);
     console.log(res.data[0].url);
     return res.data[0].url;
   });

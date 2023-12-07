@@ -19,7 +19,7 @@ const changePlayListAction = (playlist) => ({
 
 const changeCurrentSongIndexAction = (index) => ({
   type: actionTypes.CHANGE_CURRENT_SONG_INDEX,
-  index,
+  index: Number(index),
 });
 
 const changeLyricsAction = (lyrics) => ({
@@ -100,11 +100,11 @@ export const getSongDetailAction = (ids) => {
 export const changePlaySongAction = (tag) => {
   return (dispatch) => {
     // 1.获取当前的index
-
+    tag = Number(tag);
     let currentSongIndex = store.getState().song.get("currentSongIndex");
     const playSequence = store.getState().song.get("playSequence");
     const playList = store.getState().song.get("playList");
-
+    debugger;
     // 2.判断当前播放列表
     switch (playSequence) {
       case 1:
@@ -117,10 +117,10 @@ export const changePlaySongAction = (tag) => {
     }
 
     // 3.处理修改数据
+
     const currentSong = playList[currentSongIndex];
     dispatch(changeCurrentSongIndexAction(currentSongIndex));
     dispatch(changeCurrentSongAction(currentSong));
-
     // 获取当前的歌词,并且解析
     getLyric(currentSong.id).then((res) => {
       const lrcString = res.lrc.lyric;

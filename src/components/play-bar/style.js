@@ -11,5 +11,9 @@ export const PlayBarWrapper = styled.div`
   justify-content: center;
 
   .head-cover {
+    img {
+      width: 40px;
+      height: 40px;
+    }
   }
 `;

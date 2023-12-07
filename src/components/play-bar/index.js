@@ -11,6 +11,7 @@ import { message } from "antd";
 import store from "@/store";
 import { getPlayUrl } from "@/utils/format-utils";
 import { Map } from "immutable";
+import { Slider } from "antd";
 export default memo(function PlayBar() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [duration, setDuration] = useState(0);
@@ -316,6 +317,10 @@ export default memo(function PlayBar() {
   //   playSequence,
   // } = state;
   const currentSong = state.get("currentSong");
+  // console.log("currentSong being initialized to be ");
+  // console.log(currentSong);
+  // console.log("state to be ");
+  // console.log(state);
   const currentLyrics = state.get("currentLyrics");
   const currentLyricIndex = state.get("currentLyricIndex");
   const playList = state.get("playList");
@@ -335,7 +340,8 @@ export default memo(function PlayBar() {
   }, [dispatch]);
 
   useEffect(() => {
-    async function a() {
+    async function setAudioUrl() {
+      console.log("currentSong:");
       console.log(currentSong);
       audioRef.current.src = await getPlayUrl(currentSong.id);
       audioRef.current
@@ -344,11 +350,12 @@ export default memo(function PlayBar() {
           setIsPlaying(true);
         })
         .catch((err) => {
+          console.log(err);
           setIsPlaying(false);
         });
       setDuration(currentSong.dt);
     }
-    a();
+    setAudioUrl();
   }, [currentSong]);
 
   const timeUpdate = (e) => {
@@ -392,11 +399,10 @@ export default memo(function PlayBar() {
     isPlaying
       ? audioRef.current.pause()
       : audioRef.current.play().catch((err) => {
-          console.log("the song resource is at " + audioRef.current.src);
-          console.log("set isPlaying to be false \nerror: " + err);
+          // console.log("set isPlaying to be false \nerror: " + err);
           setIsPlaying(false);
         });
-  }, [isPlaying, currentSong.name]);
+  }, [isPlaying]);
 
   const sliderChange = useCallback(
     (value) => {
@@ -424,7 +430,6 @@ export default memo(function PlayBar() {
 
   return (
     <PlayBarWrapper>
-      {/* <div className="content"> */}
       <div className="play-button">
         <a
           className="prev-btn"
@@ -433,7 +438,7 @@ export default memo(function PlayBar() {
           上一首
         </a>
         <a className="play-btn" onClick={(e) => play()}>
-          切换状态
+          {isPlaying ? "正在播放" : "正在停止"}
         </a>
         <a
           className="next-btn"
@@ -446,12 +451,19 @@ export default memo(function PlayBar() {
         <picture>
           <img
             alt=""
-            src="https://p2.music.126.net/OVkXDNmbk2uj6wE1KTZIwQ==/109951165203334337.jpg?param=34y34"
+            // src="https://p2.music.126.net/OVkXDNmbk2uj6wE1KTZIwQ==/109951165203334337.jpg?param=34y34"
+            src={currentSong.al.picUrl}
           />
         </picture>
       </a>
       <div className="play">
-        <div className="progress-bar"></div>
+        <div className="progress-bar">
+          <Slider
+            value={progress}
+            onChange={sliderChange}
+            onAfterChange={sliderAfterChange}
+          />
+        </div>
       </div>
       <div className="operation"></div>
       <div className="control"></div>
