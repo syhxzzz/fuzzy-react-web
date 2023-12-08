@@ -423,18 +423,17 @@ export default memo(function PlayBar() {
         <a
           className="prev-btn sprite_playbar"
           onClick={(e) => dispatch(changePlaySongAction(-1))}
-        >
-          上一首
-        </a>
-        <a className="play-btn sprite_playbar" onClick={(e) => play()}>
-          {isPlaying ? "正在播放" : "正在停止"}
-        </a>
+        ></a>
+        <div
+          className={`sprite_playbar ${
+            isPlaying ? "now-playing" : "now-stopping"
+          }`}
+          onClick={(e) => play()}
+        ></div>
         <a
           className="next-btn sprite_playbar"
           onClick={(e) => dispatch(changePlaySongAction(1))}
-        >
-          下一首
-        </a>
+        ></a>
       </div>
       <a className="head-cover">
         <picture>
