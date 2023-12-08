@@ -10,6 +10,12 @@ export const PlayBarWrapper = styled.div`
   display: flex;
   justify-content: center;
 
+  .play-button {
+    .prev-btn {
+      background-size: 100px 100px;
+      background-position: -100px -100px;
+    }
+  }
   .head-cover {
     img {
       width: 40px;

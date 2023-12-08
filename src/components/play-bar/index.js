@@ -9,7 +9,7 @@ import {
 } from "@/store/song-store/actionCreators";
 import { message } from "antd";
 import store from "@/store";
-import { getPlayUrl } from "@/utils/format-utils";
+import { getPlayUrl, formatMinuteSecond } from "@/utils/format-utils";
 import { Map } from "immutable";
 import { Slider } from "antd";
 export default memo(function PlayBar() {
@@ -309,18 +309,7 @@ export default memo(function PlayBar() {
     })
   );
 
-  // const {
-  //   currentSong,
-  //   currentLyrics,
-  //   currentLyricIndex,
-  //   playList,
-  //   playSequence,
-  // } = state;
   const currentSong = state.get("currentSong");
-  // console.log("currentSong being initialized to be ");
-  // console.log(currentSong);
-  // console.log("state to be ");
-  // console.log(state);
   const currentLyrics = state.get("currentLyrics");
   const currentLyricIndex = state.get("currentLyricIndex");
   const playList = state.get("playList");
@@ -432,16 +421,16 @@ export default memo(function PlayBar() {
     <PlayBarWrapper>
       <div className="play-button">
         <a
-          className="prev-btn"
+          className="prev-btn sprite_playbar"
           onClick={(e) => dispatch(changePlaySongAction(-1))}
         >
           上一首
         </a>
-        <a className="play-btn" onClick={(e) => play()}>
+        <a className="play-btn sprite_playbar" onClick={(e) => play()}>
           {isPlaying ? "正在播放" : "正在停止"}
         </a>
         <a
-          className="next-btn"
+          className="next-btn sprite_playbar"
           onClick={(e) => dispatch(changePlaySongAction(1))}
         >
           下一首
@@ -463,6 +452,13 @@ export default memo(function PlayBar() {
             onChange={sliderChange}
             onAfterChange={sliderAfterChange}
           />
+          <div className="time">
+            <span className="now-time">
+              {formatMinuteSecond(currentTime * 1000)}
+            </span>
+            <span className="divider">/</span>
+            <span className="total-time">{formatMinuteSecond(duration)}</span>
+          </div>
         </div>
       </div>
       <div className="operation"></div>

@@ -104,7 +104,6 @@ export const changePlaySongAction = (tag) => {
     let currentSongIndex = store.getState().song.get("currentSongIndex");
     const playSequence = store.getState().song.get("playSequence");
     const playList = store.getState().song.get("playList");
-    debugger;
     // 2.判断当前播放列表
     switch (playSequence) {
       case 1:
