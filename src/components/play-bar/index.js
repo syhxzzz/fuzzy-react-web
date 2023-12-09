@@ -445,12 +445,18 @@ export default memo(function PlayBar() {
         </picture>
       </a>
       <div className="play">
+        <div className="song-info">
+          <div className="song-name">{currentSong.name}</div>
+          <div className="song-singer">{currentSong.ar[0].name}</div>
+        </div>
         <div className="progress-bar">
-          <Slider
-            value={progress}
-            onChange={sliderChange}
-            onAfterChange={sliderAfterChange}
-          />
+          <div className="slider">
+            <Slider
+              value={progress}
+              onChange={sliderChange}
+              onAfterChange={sliderAfterChange}
+            />
+          </div>
           <div className="time">
             <span className="now-time">
               {formatMinuteSecond(currentTime * 1000)}
