@@ -466,9 +466,14 @@ export default memo(function PlayBar() {
           </div>
         </div>
       </div>
-      <div className="operation"></div>
+      <div className="operation">
+        <a className="sprite_lyrics lyrics" title="画中画歌词"></a>
+        <a className="sprite_playbar collect" title="收藏"></a>
+        <a className="sprite_playbar share" title="分享"></a>
+      </div>
       <div className="control"></div>
       <audio ref={audioRef} onTimeUpdate={timeUpdate} onEnded={timeEnded} />
+      {/* <div></div> */}
       {showPanel && <PlayPanel />}
     </PlayBarWrapper>
   );

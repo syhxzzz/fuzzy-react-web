@@ -102,4 +102,26 @@ export const PlayBarWrapper = styled.div`
       border-radius: 5px;
     }
   }
+
+  .operation {
+    margin: 0 10px;
+    display: flex;
+    width: 85px;
+    justify-content: space-between;
+    .lyrics {
+      height: 25px;
+      width: 25px;
+      position: relative;
+    }
+    .collect {
+      height: 25px;
+      width: 25px;
+      background-position: -88px -163px;
+    }
+    .share {
+      height: 25px;
+      width: 25px;
+      background-position: -114px -163px;
+    }
+  }
 `;

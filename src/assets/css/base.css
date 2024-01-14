@@ -140,6 +140,10 @@ button {
   background: url(../img/playlist_sprite.png) no-repeat 0 9999px;
 }
 
+.sprite_lyrics {
+  background: url(../img/lyrics-button.png) no-repeat 0 0;
+}
+
 .image_cover {
   position: absolute;
   left: 0;
