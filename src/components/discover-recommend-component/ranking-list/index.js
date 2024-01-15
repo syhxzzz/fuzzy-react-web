@@ -4,7 +4,6 @@ import { RankingWrapper } from "./style";
 import ThemeHeaderRCM from "@/components/theme-header-rcm";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import TopRanking from "@/components/top-ranking";
-import store from "@/store";
 export default memo(function RankingList() {
   const dispatch = useDispatch();
 

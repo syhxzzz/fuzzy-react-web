@@ -144,6 +144,10 @@ button {
   background: url(../img/lyrics-button.png) no-repeat 0 0;
 }
 
+.play-panel-head {
+  background: url(../img/playpanel_bg.png);
+}
+
 .image_cover {
   position: absolute;
   left: 0;

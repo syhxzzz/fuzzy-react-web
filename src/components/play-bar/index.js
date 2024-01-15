@@ -471,7 +471,19 @@ export default memo(function PlayBar() {
         <a className="sprite_playbar collect" title="收藏"></a>
         <a className="sprite_playbar share" title="分享"></a>
       </div>
-      <div className="control"></div>
+      <div className="control">
+        <a className="sprite_playbar volume" title="音量"></a>
+        <a className="sprite_playbar loop" title="循环"></a>
+        <a
+          className="sprite_playbar list"
+          title="播放列表"
+          onClick={(e) => {
+            setShowPanel(!showPanel);
+          }}
+        >
+          1
+        </a>
+      </div>
       <audio ref={audioRef} onTimeUpdate={timeUpdate} onEnded={timeEnded} />
       {/* <div></div> */}
       {showPanel && <PlayPanel />}

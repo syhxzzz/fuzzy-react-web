@@ -124,4 +124,30 @@ export const PlayBarWrapper = styled.div`
       background-position: -114px -163px;
     }
   }
+  .control {
+    display: flex;
+    width: 119px;
+    justify-content: space-between;
+    .volume {
+      width: 25px;
+      height: 25px;
+      background-position: -2px -248px;
+    }
+
+    .loop {
+      width: 25px;
+      height: 25px;
+      background-position: -3px -344px;
+    }
+
+    .list {
+      display: block;
+      width: 59px;
+      height: 25px;
+      background-position: -42px -68px;
+      padding-left: 30px;
+      line-height: 27px;
+      text-decoration: none;
+    }
+  }
 `;
