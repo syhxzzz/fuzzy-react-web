@@ -1,8 +1,8 @@
-import { getSongDetail } from "@/services/player";
 import React, { memo } from "react";
 import { useDispatch } from "react-redux";
 import { TopRankingWrapper } from "./style";
 import { getSizeImage } from "@/utils/format-utils";
+import { getSongDetailAction } from "@/store/song-store";
 export default memo(function TopRanking(props) {
   const { info } = props;
   const { tracks = [] } = info;
@@ -12,7 +12,7 @@ export default memo(function TopRanking(props) {
   const playMusic = (item) => {
     dispatch(getSongDetailAction(item.id));
   };
-  // TODO(): getSongDetailAction() haven't been finished yet
+
   return (
     <TopRankingWrapper>
       <div className="header">

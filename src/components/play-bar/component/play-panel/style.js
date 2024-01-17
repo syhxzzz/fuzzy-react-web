@@ -13,6 +13,8 @@ export const PlayPanelWrapper = styled.div`
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   color: white;
+  z-index: 10;
+
   .head {
     width: 100%;
     height: 41px;

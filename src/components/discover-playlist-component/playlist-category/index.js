@@ -46,7 +46,6 @@ export default memo(function PlaylistCategory(props) {
                         onClick={(e) => {
                           selectCategory(sItem.name);
                           changeCurrentPage(1);
-                          console.log(currentPage);
                         }}
                       >
                         {sItem.name}

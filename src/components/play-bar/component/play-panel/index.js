@@ -8,6 +8,8 @@ export const PlayPanel = () => {
     songList: state.song.get("playList"),
     currentSong: state.song.get("currentSong"),
     currentSongIndex: state.song.get("currentSongIndex"),
+    currentLyrics: state.song.get("currentLyrics"),
+    currentLyricsIndex: state.song.get("currentLyricsIndex"),
   }));
 
   return (

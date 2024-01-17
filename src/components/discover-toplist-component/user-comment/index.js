@@ -15,13 +15,12 @@ export default memo(function UserComment() {
     const func = store.subscribe(updateState);
     return func;
   }, []);
+
   useEffect(() => {
     let id = toplist[currentIndex] && toplist[currentIndex].id;
-    console.log(id);
     if (!id) return;
     getComment(id, 2, currentPage).then((res) => {
       setResult(res.data.comments);
-      console.log(res);
     });
   }, [currentPage, currentIndex, toplist]);
   return (

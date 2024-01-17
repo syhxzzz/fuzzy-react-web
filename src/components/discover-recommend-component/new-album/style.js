@@ -34,6 +34,10 @@ export const AlbumWrapper = styled.div`
         overflow: hidden;
       }
 
+      .ant-carousel .slick-dots {
+        z-index: auto;
+      }
+
       .page {
         display: flex !important;
         justify-content: space-between;

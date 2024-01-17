@@ -90,6 +90,7 @@ export const getSongDetailAction = (ids) => {
 
       getLyric(ids).then((res) => {
         const lrcString = res.lrc.lyric;
+        console.log(lrcString);
         const lyrics = parseLyric(lrcString);
         dispatch(changeLyricsAction(lyrics));
       });
