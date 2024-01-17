@@ -210,7 +210,7 @@ const defaultState = Map({
     },
   ],
   playSequence: 0, // 0 顺序播放 1 随机播放 2 单曲循环
-  currentSongIndex: [],
+  currentSongIndex: 0,
   currentSong: {
     name: "有何不可",
     id: 167876,

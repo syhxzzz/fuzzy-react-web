@@ -1,7 +1,7 @@
 import { memo, useCallback, useEffect, useRef, useState } from "react";
 import { PlayBarWrapper } from "./style";
 import { PlayPanel } from "./component/play-panel";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   changeCurrentLyricIndexAction,
   changePlaySongAction,
@@ -232,7 +232,7 @@ export default memo(function PlayBar() {
         },
       ],
       playSequence: 0, // 0 顺序播放 1 随机播放 2 单曲循环
-      currentSongIndex: [],
+      currentSongIndex: 0,
       currentSong: {
         name: "有何不可",
         id: 167876,
@@ -308,6 +308,7 @@ export default memo(function PlayBar() {
       currentLyricIndex: -1,
     })
   );
+  const state1 = useSelector((state) => state.song);
 
   const currentSong = state.get("currentSong");
   const currentLyrics = state.get("currentLyrics");

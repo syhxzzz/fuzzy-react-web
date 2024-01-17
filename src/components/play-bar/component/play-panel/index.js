@@ -1,11 +1,15 @@
 import { useSelector } from "react-redux";
 import { PlayPanelWrapper } from "./style";
+import classNames from "classnames";
+import { formatMinuteSecond } from "@/utils/format-utils";
 
 export const PlayPanel = () => {
   const state = useSelector((state) => ({
     songList: state.song.get("playList"),
     currentSong: state.song.get("currentSong"),
+    currentSongIndex: state.song.get("currentSongIndex"),
   }));
+
   return (
     <PlayPanelWrapper>
       <div className="head play-panel-head">
@@ -24,9 +28,14 @@ export const PlayPanel = () => {
       </div>
       <div className="body">
         <ul className="list-content">
-          {state.songList.map((item) => {
+          {state.songList.map((item, index) => {
             return (
-              <li key={item.id} className="item">
+              <li
+                key={item.id}
+                className={classNames("item", {
+                  active: state.currentSongIndex === index,
+                })}
+              >
                 <div className="left-content">
                   <div className="play-btn sprite_playlist"></div>
                   <div className="name">{item.name}</div>
@@ -38,8 +47,8 @@ export const PlayPanel = () => {
                     <a title="下载" className="download sprite_playlist"></a>
                     <a title="删除列表" className="delete sprite_playlist"></a>
                   </div>
-                  <div className="artist">疏影横斜</div>
-                  <div className="duration">4:15</div>
+                  <div className="artist">{item.ar[0].name}</div>
+                  <div className="duration">{formatMinuteSecond(item.dt)}</div>
                   <div className="song-info"></div>
                 </div>
               </li>

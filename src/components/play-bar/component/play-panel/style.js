@@ -94,6 +94,7 @@ export const PlayPanelWrapper = styled.div`
   .body {
     display: flex;
     flex-grow: 1;
+
     .list-content {
       width: 553px;
       .item {
@@ -101,6 +102,22 @@ export const PlayPanelWrapper = styled.div`
         justify-content: space-between;
         align-items: center;
         height: 28px;
+
+        &.active {
+          color: #fff;
+          background-color: #000;
+
+          ::before {
+            content: "";
+            position: absolute;
+            left: 8px;
+            width: 10px;
+            height: 13px;
+            background: url(${require("@/assets/img/playlist_sprite.png")}) -182px
+              0;
+          }
+        }
+
         .left-content {
           display: flex;
           height: 100%;
