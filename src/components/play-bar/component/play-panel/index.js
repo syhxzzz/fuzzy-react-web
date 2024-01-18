@@ -11,7 +11,18 @@ export const PlayPanel = () => {
     currentLyrics: state.song.get("currentLyrics"),
     currentLyricsIndex: state.song.get("currentLyricsIndex"),
   }));
+  // function scrollToCurrentLyric() {
+  //   const currentLyricsElement = document.querySelector(".active");
+  //   const offsetTop = currentLyricsElement.offsetTop;
+  //   const containerHeight = document.querySelector(".lyrics").offsetHeight;
+  //   const scrollAmount = offsetTop - containerHeight;
+  //   document.querySelector("lyrics").scrollTop = scrollAmount;
+  // }
 
+  console.log("currentLyrics in PlayPanel");
+  console.log(state.currentLyrics);
+  console.log("currentLyrics now is ");
+  console.log(state.currentLyrics[state.currentLyricsIndex]);
   return (
     <PlayPanelWrapper>
       <div className="head play-panel-head">
@@ -58,7 +69,22 @@ export const PlayPanel = () => {
           })}
         </ul>
         <span className="divider"></span>
-        <div className="lyrics"></div>
+        <div className="lyrics">
+          <ul className="lyrics-content">
+            {state.currentLyrics.map((item, index) => {
+              return (
+                <li
+                  key={item.time}
+                  className={classNames("lyrics-item", {
+                    active: index === state.currentLyricsIndex,
+                  })}
+                >
+                  {item.content}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </div>
     </PlayPanelWrapper>
   );

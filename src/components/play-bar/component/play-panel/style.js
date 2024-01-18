@@ -187,7 +187,20 @@ export const PlayPanelWrapper = styled.div`
       background-color: white;
     }
     .lyrics {
-      background-color: red;
+      height: 260px;
+      flex-grow: 1;
+      overflow-y: scroll;
+      .lyrics-item {
+        height: 32px;
+        line-height: 32px;
+        text-align: center;
+        color: #989898;
+        word-wrap: break-word;
+      }
+      .active {
+        color: red;
+        font-size: 14px;
+      }
     }
   }
 `;

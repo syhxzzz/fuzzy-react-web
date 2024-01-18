@@ -34,6 +34,7 @@ export default memo(function PlayBar() {
     dispatch(getSongDetailAction(167876));
   }, [dispatch]);
 
+  // 用于控制播放暂停按钮
   useEffect(() => {
     async function setAudioUrl() {
       audioRef.current.src = await getPlayUrl(currentSong.id);
@@ -49,6 +50,23 @@ export default memo(function PlayBar() {
     }
     setAudioUrl();
   }, [currentSong]);
+
+  useEffect(() => {
+    function scrollToCurrentLyric() {
+      if (showPanel) {
+        const currentLyricsElement = document.querySelector(
+          ".lyrics-item.active"
+        );
+        if (currentLyricsElement) {
+          currentLyricsElement.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+          });
+        }
+      }
+    }
+    scrollToCurrentLyric();
+  }, [currentLyricsIndex, showPanel]);
 
   const timeUpdate = (e) => {
     const currentTime = e.target.currentTime;
