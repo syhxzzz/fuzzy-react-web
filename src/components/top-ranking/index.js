@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { TopRankingWrapper } from "./style";
 import { getSizeImage } from "@/utils/format-utils";
 import { getSongDetailAction } from "@/store/song-store";
+import { addSongToPlaylistAction } from "@/store/song-store/actionCreators";
 export default memo(function TopRanking(props) {
   const { info } = props;
   const { tracks = [] } = info;
@@ -44,7 +45,12 @@ export default memo(function TopRanking(props) {
                     className="btn sprite_02 play"
                     onClick={(e) => playMusic(item)}
                   />
-                  <button className="btn sprite_icon2 addTo" />
+                  <button
+                    className="btn sprite_icon2 addTo"
+                    onClick={(e) => {
+                      dispatch(addSongToPlaylistAction(item.id));
+                    }}
+                  />
                   <button className="btn sprite_02 favor" />
                 </div>
               </div>

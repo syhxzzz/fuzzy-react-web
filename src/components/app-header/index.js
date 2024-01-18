@@ -67,7 +67,6 @@ export default memo(function HYAppHeader() {
             onClick={(e) => {
               setClickSearch(true);
               e.stopPropagation();
-              console.log("clickSearch is true");
             }}
           />
           {clickSearch && inputWord != "" && (

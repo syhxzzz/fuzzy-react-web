@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import { PlayPanelWrapper } from "./style";
 import classNames from "classnames";
 import { formatMinuteSecond } from "@/utils/format-utils";
+import { useEffect } from "react";
 
 export const PlayPanel = () => {
   const state = useSelector((state) => ({
@@ -11,20 +12,13 @@ export const PlayPanel = () => {
     currentLyrics: state.song.get("currentLyrics"),
     currentLyricsIndex: state.song.get("currentLyricsIndex"),
   }));
-  // function scrollToCurrentLyric() {
-  //   const currentLyricsElement = document.querySelector(".active");
-  //   const offsetTop = currentLyricsElement.offsetTop;
-  //   const containerHeight = document.querySelector(".lyrics").offsetHeight;
-  //   const scrollAmount = offsetTop - containerHeight;
-  //   document.querySelector("lyrics").scrollTop = scrollAmount;
-  // }
 
-  console.log("currentLyrics in PlayPanel");
-  console.log(state.currentLyrics);
-  console.log("currentLyrics now is ");
-  console.log(state.currentLyrics[state.currentLyricsIndex]);
   return (
-    <PlayPanelWrapper>
+    <PlayPanelWrapper
+      onClick={(e) => {
+        e.stopPropagation();
+      }}
+    >
       <div className="head play-panel-head">
         <h4>
           播放列表<span className="">({state.songList.length})</span>

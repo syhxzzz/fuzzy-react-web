@@ -137,6 +137,12 @@ export default memo(function PlayBar() {
     [duration, isPlaying, play]
   );
 
+  useEffect(() => {
+    document.addEventListener("click", () => {
+      setShowPanel(false);
+    });
+  }, []);
+
   return (
     <PlayBarWrapper>
       <div className="play-button">
@@ -195,6 +201,7 @@ export default memo(function PlayBar() {
           title="播放列表"
           onClick={(e) => {
             setShowPanel(!showPanel);
+            e.stopPropagation();
           }}
         >
           1

@@ -98,6 +98,25 @@ export const getSongDetailAction = (ids) => {
   };
 };
 
+export const addSongToPlaylistAction = (ids) => {
+  return (dispatch) => {
+    const playList = store.getState().song.get("playList");
+
+    const songIndex = playList.findIndex((song) => song.id === ids);
+    if (songIndex !== -1) {
+      // 找到数据
+    } else {
+      getSongDetail(ids).then((res) => {
+        const song = res.songs && res.songs[0];
+        if (!song) return;
+
+        const newPlayList = [...playList, song];
+        dispatch(changePlayListAction(newPlayList));
+      });
+    }
+  };
+};
+
 export const changePlaySongAction = (tag) => {
   return (dispatch) => {
     // 1.获取当前的index
