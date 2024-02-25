@@ -83,5 +83,8 @@ export const SearchContentWrapper = styled.div`
     text-overflow: ellipsis; /*让截断的文字显示为点点。还有一个值是clip意截断不显示点点*/
     white-space: nowrap; /*让文字不换行*/
     overflow: hidden; /*超出要隐藏*/
+    display: flex;
+    flex-direction: column;
+
   }
 `;
